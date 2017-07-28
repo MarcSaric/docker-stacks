@@ -1,8 +1,8 @@
-# Copyright (c) Jupyter Development Team.
+# Copyright (c) Jupyter Development Team, Marc Saric.
 # Distributed under the terms of the Modified BSD License.
 FROM jupyter/minimal-notebook
 
-MAINTAINER Jupyter Project <jupyter@googlegroups.com>
+MAINTAINER Marc Saric <marc.saric@gmx.de>
 
 USER root
 
