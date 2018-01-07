@@ -17,6 +17,6 @@ RUN apt-get update && \
 USER $NB_USER
 
 # R packages
-RUN conda install -c rdonnellyr \
+RUN conda install \
      'r-essentials=1.6.0' --quiet --yes \
      && conda clean -tipsy
