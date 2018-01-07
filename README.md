@@ -7,10 +7,26 @@ Opinionated stacks of ready-to-run Jupyter applications in Docker.
 
 ## Quick Start
 
-If you're familiar with Docker, have it configured, and know exactly what you'd like to run, this one-liner should work in most cases:
+If you're familiar with Docker, have it configured, and know exactly what you'd like to run, one of these commands should get you up and running:
 
 ```
-docker run -d -P jupyter/<your desired stack>
+# Run an ephemeral Jupyter Notebook server in a Docker container in the terminal foreground.
+# Note that any work saved in the container will be lost when it is destroyed with this config.
+# -ti: pseudo-TTY+STDIN open.
+# -rm: remove the container on exit.
+# -p: publish port to the host
+docker run -ti --rm -p 8888:8888 jupyter/<your desired stack>:<git-sha-tag>
+
+# Run a Jupyter Notebook server in a Docker container in the terminal foreground.
+# Any files written to ~/work in the container will be saved to the current working
+# directory on the host.
+docker run -ti --rm -p 8888:8888 -v "$PWD":/home/jovyan/work jupyter/<your desired stack>:<git-sha-tag>
+
+# Run an ephemeral Jupyter Notebook server in a Docker container in the background.
+# Note that any work saved in the container will be lost when it is destroyed with this config.
+# -d: detach, run container in background.
+# -P: Publish all exposed ports to random ports
+docker run -d -P jupyter/<your desired stack>:<git-sha-tag>
 ```
 
 ## Getting Started
@@ -25,7 +41,20 @@ If this is your first time using Docker or any of the Jupyter projects, do the f
 
 Here's a diagram of the `FROM` relationships between all of the images defined in this project:
 
-[![Image inheritance diagram](internal/inherit-diagram.png)](http://interactive.blockdiag.com/?compression=deflate&src=eJyFzbEOgkAMgOGdp7iwsxsJRjZ3R2NMjyumcrTkrsag8d3l3I6F9e_X1nrpBkdwN5_CGAmErKAkbBozSdAApPUycdjD0-utF9ZIb1zGu9Rbc_Fg0TelQ0vA-wfGSHg8n9ryWhd_UR2MhYgVi6IVGdJeFpIYiWkEn6F1Sy52NM2Zyksyihwl9F5eG9CBwlKRO9x8HDZuTXOcIAyZWrfkwPtqLb8_jh2GrQ)
+[![Image inheritance diagram](internal/inherit-diagram.svg)](http://interactive.blockdiag.com/?compression=deflate&src=eJyFzTEPgjAQhuHdX9Gws5sQjGzujsaYKxzmQrlr2msMGv-71K0srO_3XGud9NNA8DSfgzESCFlBSdi0xkvQAKTNugw4QnL6GIU10hvX-Zh7Z24OLLq2SjaxpvP10lX35vCf6pOxELFmUbQiUz4oQhYzMc3gCrRt2cWe_FKosmSjyFHC6OS1AwdQWCtyj7sfh523_BI9hKlQ25YdOFdv5fcH0kiEMA)
+
+[Click here for a commented build history of each image, with references to tag/SHA values.](https://github.com/jupyter/docker-stacks/wiki/Docker-build-history)
+
+The following are quick-links to READMEs about each image and their Docker image tags on Docker Cloud:
+
+* base-notebook: [README](https://github.com/jupyter/docker-stacks/tree/master/base-notebook), [SHA list](https://hub.docker.com/r/jupyter/base-notebook/tags/)
+* minimal-notebook: [README](https://github.com/jupyter/docker-stacks/tree/master/minimal-notebook), [SHA list](https://hub.docker.com/r/jupyter/minimal-notebook/tags/)
+* scipy-notebook: [README](https://github.com/jupyter/docker-stacks/tree/master/scipy-notebook), [SHA list](https://hub.docker.com/r/jupyter/scipy-notebook/tags/)
+* r-notebook: [README](https://github.com/jupyter/docker-stacks/tree/master/r-notebook), [SHA list](https://hub.docker.com/r/jupyter/r-notebook/tags/)
+* tensorflow-notebook: [README](https://github.com/jupyter/docker-stacks/tree/master/tensorflow-notebook), [SHA list](https://hub.docker.com/r/jupyter/tensorflow-notebook/tags/)
+* datascience-notebook: [README](https://github.com/jupyter/docker-stacks/tree/master/datascience-notebook), [SHA list](https://hub.docker.com/r/jupyter/datascience-notebook/tags/)
+* pyspark-notebook: [README](https://github.com/jupyter/docker-stacks/tree/master/pyspark-notebook), [SHA list](https://hub.docker.com/r/jupyter/pyspark-notebook/tags/)
+* all-spark-notebook: [README](https://github.com/jupyter/docker-stacks/tree/master/all-spark-notebook), [SHA list](https://hub.docker.com/r/jupyter/all-spark-notebook/tags/)
 
 ## Stacks, Tags, Versioning, and Progress
 
@@ -33,13 +62,17 @@ Starting with [git commit SHA 9bd33dcc8688](https://github.com/jupyter/docker-st
 
 * Nearly every folder here on GitHub has an equivalent `jupyter/<stack name>` on Docker Hub (e.g., all-spark-notebook &rarr; jupyter/all-spark-notebook).
 * The `latest` tag in each Docker Hub repository tracks the `master` branch `HEAD` reference on GitHub.
+  This is a moving target and will make backward-incompatible changes regularly.
 * Any 12-character image tag on Docker Hub refers to a git commit SHA here on GitHub. See the [Docker build history wiki page](https://github.com/jupyter/docker-stacks/wiki/Docker-build-history) for a table of build details.
 * Stack contents (e.g., new library versions) will be updated upon request via PRs against this project.
-* Users looking to remain on older builds should refer to specific git SHA tagged images in their work, not `latest`.
+* Users looking for reproducibility or stability should always refer to specific git SHA tagged images in their work, not `latest`.
 * For legacy reasons, there are two additional tags named `3.2` and `4.0` on Docker Hub which point to images prior to our versioning scheme switch.
 
 ## Other Tips and Known Issues
 
+- If you haven't already, pin your image to a tag, e.g. `FROM jupyter/scipy-notebook:7c45ec67c8e7`.
+  `latest` is a moving target which can change in backward-incompatible ways as packages and operating systems are updated.
+* Python 2.x was [removed from all images](https://github.com/jupyter/docker-stacks/pull/433) on August 10th, 2017, starting in tag `cc9feab481f7`. If you wish to continue using Python 2.x, pin to tag `82b978b3ceeb`.
 * `tini -- start-notebook.sh` is the default Docker entrypoint-plus-command in every notebook stack. If you plan to modify it in any way, be sure to check the *Notebook Options* section of your stack's README to understand the consequences.
 * Every notebook stack is compatible with [JupyterHub](https://jupyterhub.readthedocs.io) 0.5 or higher.  When running with JupyterHub, you must override the Docker run command to point to the [start-singleuser.sh](base-notebook/start-singleuser.sh) script, which starts a single-user instance of the Notebook server.  See each stack's README for instructions on running with JupyterHub.
 * Check the [Docker recipes wiki page](https://github.com/jupyter/docker-stacks/wiki/Docker-Recipes) attached to this project for information about extending and deploying the Docker images defined here. Add to the wiki if you have relevant information.
@@ -57,9 +90,9 @@ Starting with [git commit SHA 9bd33dcc8688](https://github.com/jupyter/docker-st
 5. Avoid merging another PR to master until all outstanding builds complete.
     * There's no way at present to propagate the git SHA to build through the Docker Cloud build trigger API. Every build trigger works off of master HEAD.
 
-**When there's a security fix in the Debian base image, do the following in place of the last command:**
+**When there's a security fix in the Ubuntu base image, do the following in place of the last command:**
 
-Update the `debian:jessie` SHA in the most-base images (e.g., base-notebook). Submit it as a regular PR and go through the build process. Expect the build to take a while to complete: every image layer will rebuild.
+Update the `ubuntu:16.04` SHA in the most-base images (e.g., base-notebook). Submit it as a regular PR and go through the build process. Expect the build to take a while to complete: every image layer will rebuild.
 
 **When there's a new stack definition, do the following before merging the PR with the new stack:**
 
