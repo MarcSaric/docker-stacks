@@ -4,8 +4,8 @@
 
 ## What it Gives You
 
-* Jupyter Notebook 5.0.x
-* Conda R v3.4.x preview as provided by rdonnellyr pre-installed
+* Jupyter Notebook 5.2.x
+* Conda R v3.4.x pre-installed
 * Unprivileged user `jovyan` (uid=1000, configurable, see options) in group `users` (gid=100) with ownership over `/home/jovyan` and `/opt/conda`
 * [tini](https://github.com/krallin/tini) as the container entrypoint and [start-notebook.sh](../base-notebook/start-notebook.sh) as the default command
 * A [start-singleuser.sh](../base-notebook/start-singleuser.sh) script useful for running a single-user instance of the Notebook server, as required by JupyterHub

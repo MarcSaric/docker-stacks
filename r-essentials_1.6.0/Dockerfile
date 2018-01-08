@@ -6,12 +6,20 @@ MAINTAINER Marc Saric <marc.saric@gmx.de>
 
 USER root
 
-# R pre-requisites
+# R and Python pre-requisites
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     fonts-dejavu \
     gfortran \
-    gcc && apt-get clean && \
+    gcc \
+    git \
+    htop \
+    less \
+    libcurl4-openssl-dev \
+    libssl-dev \
+    libxml2-dev \
+    tzdata \
+    && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 USER $NB_USER
