@@ -15,9 +15,13 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     htop \
     inkscape \
     jed \
+    less \
+    libcurl4-openssl-dev \
     libsm6 \
+    libssl-dev \
     libxext-dev \
     libxrender1 \
+    libxml2-dev \
     lmodern \
     pandoc \
     python-dev \

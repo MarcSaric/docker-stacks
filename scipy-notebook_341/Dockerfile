@@ -1,8 +1,8 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
-FROM jupyter/minimal-notebook
+FROM marcsaric/minimal-notebook_341
 
-LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
+LABEL maintainer="Marc Saric <marc.saric@gmx.de>"
 
 USER root
 
@@ -64,5 +64,19 @@ RUN cd /tmp && \
 ENV XDG_CACHE_HOME /home/$NB_USER/.cache/
 RUN MPLBACKEND=Agg python -c "import matplotlib.pyplot" && \
     fix-permissions /home/$NB_USER
+
+# Install bio_corex
+RUN cd /home/$NB_USER/
+
+# Get the bio_corex data
+RUN git clone https://github.com/gregversteeg/bio_corex.git
+
+# Add empty __init__.py to make it a package
+RUN touch /home/$NB_USER/bio_corex/__init__.py && \
+    fix-permissions /home/$NB_USER
+
+# FIXME: Untested: Add cloned path to PYTHONPATH
+RUN export PYTHONPATH=$PYTHONPATH:/home/$NB_USER/bio_corex
+
 
 USER $NB_USER
