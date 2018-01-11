@@ -3,7 +3,7 @@
 
 FROM jupyter/base-notebook
 
-LABEL maintainer="Marc Saric"
+LABEL maintainer="Marc Saric <marc.saric@gmx.de>"
 
 USER root
 

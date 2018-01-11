@@ -18,19 +18,20 @@ RUN apt-get update && \
 USER $NB_USER
 
 # R packages including IRKernel which gets installed globally.
-# FIXME: Adjust versions
+# Adjusted versions to latest major and minor digits
 RUN conda config --system --append channels r && \
     conda install --quiet --yes \
-    'rpy2=2.8*' \
-    'r-base=3.4.1' \
-    'r-irkernel=0.7*' \
+    'rpy2=2.9*' \
+    'rstudio=1.1*' \
+    'r-base=3.4.2' \
+    'r-irkernel=0.8*' \
     'r-plyr=1.8*' \
-    'r-devtools=1.12*' \
-    'r-tidyverse=1.0*' \
-    'r-shiny=0.14*' \
-    'r-rmarkdown=1.2*' \
-    'r-forecast=7.3*' \
-    'r-rsqlite=1.1*' \
+    'r-devtools=1.13*' \
+    'r-tidyverse=1.1*' \
+    'r-shiny=1.0.5*' \
+    'r-rmarkdown=1.6*' \
+    'r-forecast=8.2*' \
+    'r-rsqlite=2.0*' \
     'r-reshape2=1.4*' \
     'r-nycflights13=0.2*' \
     'r-caret=6.0*' \
@@ -41,3 +42,4 @@ RUN conda config --system --append channels r && \
     fix-permissions $CONDA_DIR
 
 # FIXME: Add TCGAbiolinks from Bioconductor
+RUN R -e 'source("https://bioconductor.org/biocLite.R");biocLite("TCGAbiolinks")'
