@@ -2,7 +2,7 @@
 
 # Fork of Jupyter Notebook Data Science Stack
 
-This is fork of the jupyter/datascience-notebook docker image.
+This is fork of the [jupyter/datascience-notebook](https://github.com/jupyter/docker-stacks/tree/master/datascience-notebook) stack adding some modifications.
 
 ## What it Gives You
 
