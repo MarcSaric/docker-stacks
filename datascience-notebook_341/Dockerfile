@@ -48,5 +48,5 @@ RUN conda config --system --append channels r && \
     conda clean -tipsy && \
     fix-permissions $CONDA_DIR
 
-# FIXME: Add TCGAbiolinks from Bioconductor
+# Add TCGAbiolinks from Bioconductor
 RUN R -e 'source("https://bioconductor.org/biocLite.R");biocLite("TCGAbiolinks")'
