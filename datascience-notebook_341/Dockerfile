@@ -19,12 +19,8 @@ RUN apt-get update && \
 USER $NB_USER
 
 # R packages including IRKernel which gets installed globally.
-# Added order of channels as per https://bioconda.github.io/
 # Adjusted versions to latest major and minor digits
-RUN conda config --system --add channels r \
-    conda config --system --add channels defaults \
-    conda config --system --add channels conda-forge \
-    conda config --system --add channels bioconda && \
+RUN conda config --system --append channels r && \
     conda install --quiet --yes \
     'gcc_linux-64' \
     'gxx_linux-64' \
@@ -48,52 +44,7 @@ RUN conda config --system --add channels r \
     'r-caret=6.0*' \
     'r-rcurl=1.95*' \
     'r-crayon=1.3*' \
-    'r-randomforest=4.6*' \
-    'r-dt=0.2' \
-    'r-mvtnorm=1.0_6 ' \
-    'r-exactranktests=0.8_29' \
-    FIXME '-c bioconda bioconductor-zlibbioc=1.24.0' \
-    FIXME '-c bioconda bioconductor-genomicalignments=1.14.0' \
-    FIXME '-c bioconda bioconductor-geneplotter=1.56.0' \
-    'r-rjson=0.2.15' \
-    FIXME '-c conda-forge r-ggpubr=0.1.6' \
-    FIXME '-c conda-forge r-maxstat=0.7_25' \
-    FIXME '-c conda-forge r-cmprsk=2.2_7' \
-    FIXME '-c bioconda bioconductor-xvector=0.18.0' \
-    FIXME '-c bioconda bioconductor-biobase=2.38.0' \
-    FIXME '-c bioconda bioconductor-shortread=1.36.0' \
-    FIXME Which one? '-c bioconda bioconductor-deseq2=1.18.1' \
-    FIXME Which one? '-c bioconda bioconductor-deseq=1.30.0' \
-    FIXME '-c bioconda bioconductor-aroma.light=3.8.0' \
-    FIXME '-c bioconda bioconductor-rsamtools=1.30.0' \
-    FIXME '-c bioconda bioconductor-biostrings=2.46.0' \
-    FIXME '-c bioconda bioconductor-annotationdbi=1.40.0' \
-    FIXME '-c bioconda r-locfit=1.5_9.1' \
-    FIXME '-c bioconda r-getoptlong=0.1.0' \
-    FIXME '-c bioconda bioconductor-delayedarray=0.4.1' \
-    FIXME '-c bioconda bioconductor-annotate=1.56.0' \
-    FIXME Right package??? '-c bioconda bioconductor-all=1.20.0' \
-    FIXME '-c bioconda r-rmysql=0.10.11' \
-    FIXME '-c bioconda bioconductor-rtrackl=1.38.0' \
-    FIXME '-c bioconda bioconductor-biocparallel=1.12.0' \
-    FIXME '-c bioconda r-matrixstats=0.51.0' \
-    FIXME '-c conda-forge r-survminer=0.4.1' \
-    FIXME '-c bioconda bioconductor-genomicranges=1.30.0' \
-    FIXME Right package??? '-c r r-xml=3.98_1.9' \
-    FIXME '-c bioconda bioconductor-edaseq=2.12.0' \
-    FIXME '-c bioconda bioconductor-edger=3.20.1' \
-    FIXME '-c bioconda bioconductor-biomart=2.34.0' \
-    FIXME '-c bioconda bioconductor-iranges=2.12.0' \
-    FIXME '-c bioconda bioconductor-s4vectors=0.16.0' \
-    FIXME '-c bioconda bioconductor-complexheatmap=1.17.1' \
-    FIXME '-c bioconda bioconductor-summarizedexperiment=1.8.0' \
-    FIXME '-c bioconda bioconductor-genefilter=1.60.0' \
-    FIXME '-c bioconda bioconductor-consensusclusterplus=1.42.0' \
-    FIXME '-c bioconda bioconductor-genomeinfodb=1.14.0' \
-    FIXME '-c bioconda bioconductor-genomicfeatures=1.30.0' \
-    FIXME '-c bioconda bioconductor-sva=3.26.0' \
-    FIXME '-c bioconda bioconductor-limma=3.34.1' \
-    FIXME '-c bioconda r-ggrepel=0.6.5' && \
+    'r-randomforest=4.6*' && \
     conda clean -tipsy && \
     fix-permissions $CONDA_DIR
 
