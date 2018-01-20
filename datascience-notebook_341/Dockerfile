@@ -11,6 +11,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     fonts-dejavu \
     tzdata \
+    libmariadb-client-lgpl-dev \
     gfortran \
     gcc && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -20,6 +21,12 @@ USER $NB_USER
 # R packages including IRKernel which gets installed globally.
 # Adjusted versions to latest major and minor digits
 RUN conda config --system --append channels r && \
+    conda install --quiet --yes \
+    'gcc_linux-64' \
+    'gxx_linux-64' \
+    'gfortran_linux-64' && \
+    conda clean -tipsy && \
+    fix-permissions $CONDA_DIR && \
     conda install --quiet --yes \
     'rpy2=2.9*' \
     'rstudio=1.1*' \
