@@ -16,6 +16,9 @@ RUN apt-get update && \
     gcc && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Fix a bug in some R-packages, which want /bin/gtar instead of /bin/tar
+RUN ln -s /bin/tar /bin/gtar
+
 USER $NB_USER
 
 # R packages including IRKernel which gets installed globally.
@@ -44,9 +47,16 @@ RUN conda config --system --append channels r && \
     'r-caret=6.0*' \
     'r-rcurl=1.95*' \
     'r-crayon=1.3*' \
-    'r-randomforest=4.6*' && \
+    'r-randomforest=4.6*' \
+    'r-igraph' && \
     conda clean -tipsy && \
     fix-permissions $CONDA_DIR
 
 # Add TCGAbiolinks from Bioconductor
 RUN R -e 'source("https://bioconductor.org/biocLite.R");biocLite("TCGAbiolinks")'
+
+# Add TCGAWorkflow
+COPY installTCGAWorkflow.R /home/$NB_USER
+RUN R -f /home/$NB_USER/installTCGAWorkflow.R
+
+
