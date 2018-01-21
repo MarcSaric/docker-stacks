@@ -11,6 +11,7 @@ This is fork of the [jupyter/datascience-notebook](https://github.com/jupyter/do
 * pandas, matplotlib, scipy, seaborn, scikit-learn, scikit-image, sympy, cython, patsy, statsmodel, cloudpickle, dill, numba, bokeh pre-installed
 * bio_corex as a machine-learning package
 * Conda R v3.4.x and channel
+* TCGAWorkflow, see https://www.bioconductor.org/help/workflows/TCGAWorkflow/
 * plyr, devtools, shiny, rmarkdown, forecast, rsqlite, reshape2, nycflights13, caret, rcurl, and randomforest pre-installed
 * The [tidyverse](https://github.com/tidyverse/tidyverse) R packages are also installed, including ggplot2, dplyr, tidyr, readr, purrr, tibble, stringr, lubridate, and broom
 * TCGAbiolinks via Bioconductor for easy download of TCGA data.
