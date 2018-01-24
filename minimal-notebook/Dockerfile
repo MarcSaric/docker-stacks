@@ -3,7 +3,7 @@
 
 FROM jupyter/base-notebook
 
-LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
+LABEL maintainer="Marc Saric <marc.saric@gmx.de>"
 
 USER root
 
@@ -12,11 +12,16 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     build-essential \
     emacs \
     git \
+    htop \
     inkscape \
     jed \
+    less \
+    libcurl4-openssl-dev \
     libsm6 \
+    libssl-dev \
     libxext-dev \
     libxrender1 \
+    libxml2-dev \
     lmodern \
     pandoc \
     python-dev \
