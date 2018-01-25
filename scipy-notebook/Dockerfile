@@ -18,7 +18,7 @@ USER $NB_USER
 # Remove pyqt and qt pulled in for matplotlib since we're only ever going to
 # use notebook-friendly backends in these images
 RUN conda install --quiet --yes \
-    'nomkl' \
+    'nomkl=1*' \
     'ipywidgets=7.0*' \
     'pandas=0.19*' \
     'numexpr=2.6*' \
@@ -41,8 +41,8 @@ RUN conda install --quiet --yes \
     'vincent=0.4.*' \
     'beautifulsoup4=4.5.*' \
     'protobuf=3.*' \
-    'xlrd'  \
-    'ipyparallel-6.*' && \
+    'xlrd=1.1.*'  \
+    'ipyparallel=6.*' && \
     conda remove --quiet --yes --force qt pyqt && \
     conda clean -tipsy && \
     # Activate ipywidgets extension in the environment that runs the notebook server
