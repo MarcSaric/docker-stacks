@@ -1,7 +1,7 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
 
-FROM jupyter/base-notebook
+FROM marcsaric/base-notebook
 
 LABEL maintainer="Marc Saric <marc.saric@gmx.de>"
 
@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     build-essential \
     emacs \
     git \
+    git-annex \
     htop \
     inkscape \
     jed \
