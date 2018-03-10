@@ -1,4 +1,5 @@
 # Copyright (c) Jupyter Development Team.
+# This is a fork of the notebooks from Jupyter Dev Team.
 # Distributed under the terms of the Modified BSD License.
 
 FROM marcsaric/base-notebook

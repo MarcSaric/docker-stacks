@@ -14,7 +14,7 @@ Small image for working in the notebook and installing your own libraries
 * A [start-singleuser.sh](../base-notebook/start-singleuser.sh) script useful for running a single-user instance of the Notebook server, as required by JupyterHub
 * A [start.sh](../base-notebook/start.sh) script useful for running alternative commands in the container (e.g. `ipython`, `jupyter kernelgateway`, `jupyter lab`)
 * Options for a self-signed HTTPS certificate and passwordless `sudo`
-
+* git and git-annex to load/store version controlled files and large binary blobs
 ## Basic Use
 
 The following command starts a container with the Notebook server listening for HTTP connections on port 8888 with a randomly generated authentication token configured.
