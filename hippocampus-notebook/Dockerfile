@@ -1,4 +1,5 @@
 # Copyright (c) Jupyter Development Team.
+# Derived from Jupyter notebook stack.
 # Distributed under the terms of the Modified BSD License.
 FROM marcsaric/minimal-notebook
 
