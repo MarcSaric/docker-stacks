@@ -7,6 +7,16 @@ LABEL maintainer="Marc Saric <marc.saric@gmx.de>"
 
 USER root
 
-# FIXME: Add ftp-ssl and setup git-annex
+# FIXME: Setup git-annex
+# Install all OS dependencies for fully functional notebook server
+RUN apt-get update && apt-get install -yq --no-install-recommends \
+    ftp-ssl \
+    && apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
+# Testinstall the bash-kernel from https://github.com/takluyver/bash_kernel
+RUN pip install bash_kernel \ 
+    && python -m bash_kernel.install
+
+# Switch back to jovyan to avoid accidental container runs as root
 USER $NB_USER
