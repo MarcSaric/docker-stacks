@@ -22,6 +22,7 @@ RUN pip install bash_kernel \
 # Switch back to jovyan to avoid accidental container runs as root
 USER $NB_USER
 
+# This somehow did not work really
 RUN git config --global user.email "marc.saric@gmx.de"
 RUN git config --global user.name "Marc Saric"
 
