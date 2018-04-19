@@ -22,10 +22,10 @@ RUN ln -s /bin/tar /bin/gtar
 USER $NB_USER
 
 # FIXME: Add Biopython either from Conda or from scratch
+RUN conda install --quiet --yes \
+    -c anaconda biopython
 
-# Add that database-tool as well: https://pythonhosted.org/cruzdb/
-
-    conda clean -tipsy && \
+RUN conda clean -tipsy && \
     fix-permissions $CONDA_DIR
 
 
