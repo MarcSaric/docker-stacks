@@ -23,7 +23,9 @@ USER $NB_USER
 
 # FIXME: Add Biopython either from Conda or from scratch
 RUN conda install --quiet --yes \
-    -c anaconda biopython
+    -c anaconda biopython && \
+    conda install -c bioconda pysam && \
+    conda install -c bioconda pysamstats 
 
 RUN conda clean -tipsy && \
     fix-permissions $CONDA_DIR
