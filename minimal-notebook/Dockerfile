@@ -27,6 +27,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     libxml2-dev \
     lmodern \
     man \
+    netcat \
     pandoc \
     python-dev \
     texlive-fonts-extra \
@@ -35,10 +36,10 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     texlive-latex-base \
     texlive-latex-extra \
     texlive-xetex \
-    vim \
     unzip \
+    vim \
     && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 # Switch back to jovyan to avoid accidental container runs as root
-USER $NB_USER
+USER $NB_UID

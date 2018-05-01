@@ -2,9 +2,9 @@
 # Derived from Jupyter notebook stack.
 # Distributed under the terms of the Modified BSD License.
 
-# Ubuntu 16.04 (xenial) from 2017-07-23
-# https://github.com/docker-library/official-images/commit/0ea9b38b835ffb656c497783321632ec7f87b60c
-FROM ubuntu@sha256:84c334414e2bfdcae99509a6add166bbb4fa4041dc3fa6af08046a66fed3005f
+# Ubuntu 16.04 (xenial) from 2018-02-28
+# https://github.com/docker-library/official-images/commit/8728671fdca3dfc029be4ab838ab5315aa125181
+FROM ubuntu:xenial-20180228@sha256:e348fbbea0e0a0e73ab0370de151e7800684445c509d46195aef73e090a49bd6
 
 LABEL maintainer="Marc Saric <marc.saric@gmx.de>"
 
@@ -51,10 +51,11 @@ ADD fix-permissions /usr/local/bin/fix-permissions
 RUN useradd -m -s /bin/bash -N -u $NB_UID $NB_USER && \
     mkdir -p $CONDA_DIR && \
     chown $NB_USER:$NB_GID $CONDA_DIR && \
+    chmod g+w /etc/passwd /etc/group && \
     fix-permissions $HOME && \
     fix-permissions $CONDA_DIR
 
-USER $NB_USER
+USER $NB_UID
 
 # Setup work directory for backward-compatibility
 RUN mkdir /home/$NB_USER/work && \
@@ -72,18 +73,22 @@ RUN cd /tmp && \
     $CONDA_DIR/bin/conda config --system --set show_channel_urls true && \
     $CONDA_DIR/bin/conda update --all --quiet --yes && \
     conda clean -tipsy && \
-    fix-permissions $CONDA_DIR
+    rm -rf /home/$NB_USER/.cache/yarn && \
+    fix-permissions $CONDA_DIR && \
+    fix-permissions /home/$NB_USER
 
 # Install Jupyter Notebook and Hub
 RUN conda install --quiet --yes \
-    'notebook=5.2.*' \
+    'notebook=5.4.*' \
     'jupyterhub=0.8.*' \
-    'jupyterlab=0.30.*' \
-    && conda clean -tipsy && \
-    jupyter labextension install @jupyterlab/hub-extension@^0.7.0 && \
-    npm cache clean && \
+    'jupyterlab=0.32.*' && \
+    conda clean -tipsy && \
+    jupyter labextension install @jupyterlab/hub-extension@^0.8.1 && \
+    npm cache clean --force && \
     rm -rf $CONDA_DIR/share/jupyter/lab/staging && \
-    fix-permissions $CONDA_DIR
+    rm -rf /home/$NB_USER/.cache/yarn && \
+    fix-permissions $CONDA_DIR && \
+    fix-permissions /home/$NB_USER
 
 USER root
 
@@ -102,4 +107,4 @@ COPY jupyter_notebook_config.py /etc/jupyter/
 RUN fix-permissions /etc/jupyter/
 
 # Switch back to jovyan to avoid accidental container runs as root
-USER $NB_USER
+USER $NB_UID
