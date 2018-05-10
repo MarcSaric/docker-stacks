@@ -16,9 +16,6 @@ RUN apt-get update && \
     gcc && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Fix a bug in some R-packages, which want /bin/gtar instead of /bin/tar
-RUN ln -s /bin/tar /bin/gtar
-
 USER $NB_USER
 
 # FIXME: Add Biopython either from Conda or from scratch
