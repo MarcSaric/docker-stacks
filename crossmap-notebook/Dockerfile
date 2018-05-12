@@ -1,26 +1,36 @@
-# Choose your desired base image
-FROM jupyter/scipy-notebook:82b978b3ceeb
+# Copyright (c) Jupyter Development Team.
+# This is a fork of the notebooks from Jupyter Dev Team.
+# Distributed under the terms of the Modified BSD License.
 
-# Create a Python 2.x environment using conda including at least the ipython kernel
-# and the kernda utility. Add any additional packages you want available for use
-# in a Python 2 notebook to the first line here (e.g., pandas, matplotlib, etc.)
-#RUN conda create --quiet --yes -p $CONDA_DIR/envs/python2 python=2.7 ipython ipykernel kernda && \
-#    conda clean -tipsy
-#RUN conda create --quiet --yes -p $CONDA_DIR/envs/python2 -c conda-forge python=2.7 ipython kernda=0.2 ipykernel && \
-#conda clean -tipsy
+FROM marcsaric/minimal-notebook
 
-#USER root
+LABEL maintainer="Marc Saric <marc.saric@gmx.de>"
 
-# Create a global kernelspec in the image and modify it so that it properly activates
-# the python2 conda environment.
-#RUN $CONDA_DIR/envs/python2/bin/python -m ipykernel install && \
-#$CONDA_DIR/envs/python2/bin/kernda -o -y /usr/local/share/jupyter/kernels/python2/kernel.json
+USER root
 
-USER $NB_USER
+# Testinstall the bash-kernel from https://github.com/takluyver/bash_kernel
+RUN pip install bash_kernel \
+    && python -m bash_kernel.install
 
-# Add Biopython either from Conda or from scratch
-RUN conda install --quiet --yes \
-    -c bioconda crossmap
+# Install all OS dependencies for fully functional notebook server
+RUN apt-get update && apt-get install -yq --no-install-recommends \
+    less \
+    apt-utils \
+    zlib1g-dev \
+    liblzo2-dev \
+    python2.7 \
+    python-setuptools \
+    python-pip \
+    build-essential \
+    && apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
-RUN conda clean -tipsy && \
-    fix-permissions $CONDA_DIR
+ENV PATH=/usr/bin:$PATH 
+
+RUN pip install CrossMap
+
+ENV PATH=$CONDA_DIR/bin:$PATH \
+    HOME=/home/$NB_USER
+
+# Switch back to jovyan to avoid accidental container runs as root
+USER $NB_UID
