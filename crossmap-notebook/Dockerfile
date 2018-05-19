@@ -27,7 +27,8 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
 
 ENV PATH=/usr/bin:$PATH 
 
-RUN pip install CrossMap
+RUN pip install pysam==0.13
+RUN pip install CrossMap==0.2.7
 
 ENV PATH=$CONDA_DIR/bin:$PATH \
     HOME=/home/$NB_USER
