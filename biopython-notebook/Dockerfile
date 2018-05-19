@@ -18,13 +18,15 @@ RUN apt-get update && \
 
 USER $NB_USER
 
-# Add Biopython either from Conda or from scratch
+# Add Biopython and other bioinformatics tools from Conda
 RUN conda install --quiet --yes \
     -c anaconda biopython && \
     conda install -c bioconda pysam && \
     conda install -c bioconda pysamstats && \
-    conda install -c bioconda bwa=0.7.17  
-
+    conda install -c bioconda bwa=0.7.17 && \
+    conda install -c bioconda picard=2.18.4 && \
+    conda install -c bioconda gatk=3.8
+  
 RUN conda clean -tipsy && \
     fix-permissions $CONDA_DIR
 
