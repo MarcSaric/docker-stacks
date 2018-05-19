@@ -22,7 +22,8 @@ USER $NB_USER
 RUN conda install --quiet --yes \
     -c anaconda biopython && \
     conda install -c bioconda pysam && \
-    conda install -c bioconda pysamstats 
+    conda install -c bioconda pysamstats && \
+    conda install -c bioconda bwa=0.7.17  
 
 RUN conda clean -tipsy && \
     fix-permissions $CONDA_DIR
