@@ -18,15 +18,23 @@ RUN apt-get update && \
 
 USER $NB_USER
 
+# Testinstall the bash-kernel from https://github.com/takluyver/bash_kernel
+RUN pip install bash_kernel \
+    && python -m bash_kernel.install
+
 # Add Biopython and other bioinformatics tools from Conda
 RUN conda install --quiet --yes \
-    -c anaconda biopython && \
-    conda install -c bioconda pysam && \
-    conda install -c bioconda pysamstats 
+    -c bioconda \
+    'pysam' \
+    'pysamstats' \
+    'bwa=0.7.17' \
+    'picard=2.18.4' \
+    'gatk4=4.0.4.0'
+
   
 RUN conda clean -tipsy && \
     fix-permissions $CONDA_DIR
 
-
+USER $NB_USER
 
 
