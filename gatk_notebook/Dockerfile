@@ -29,7 +29,8 @@ RUN conda install --quiet --yes \
     'pysamstats' \
     'bwa=0.7.17' \
     'picard=2.18.4' \
-    'gatk4=4.0.4.0'
+    'gatk4=4.0.4.0' \
+    'seqkit=0.8.0'
 
   
 RUN conda clean -tipsy && \
