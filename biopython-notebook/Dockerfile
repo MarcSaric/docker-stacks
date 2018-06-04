@@ -22,8 +22,9 @@ USER $NB_USER
 RUN conda install --quiet --yes \
     -c anaconda biopython && \
     conda install -c bioconda pysam && \
-    conda install -c bioconda pysamstats && \
-    conda install -c bioconda pyvcf=0.6.8.dev0
+    conda install -c bioconda pysamstats 
+
+RUN conda install -c conda-forge jupyter_contrib_nbextensions
   
 RUN conda clean -tipsy && \
     fix-permissions $CONDA_DIR
