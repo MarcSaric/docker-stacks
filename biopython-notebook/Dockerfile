@@ -21,14 +21,23 @@ USER $NB_USER
 # Add Biopython and other bioinformatics tools from Conda
 RUN conda install --quiet --yes \
     -c anaconda biopython && \
+    conda install -c anaconda autopep8 && \
     conda install -c bioconda pysam && \
     conda install -c bioconda pysamstats 
 
-RUN conda install -c conda-forge jupyter_contrib_nbextensions
-  
+RUN conda install -c conda-forge \
+    'jupyter_contrib_nbextensions' \
+    'jupyter_nbextensions_configurator'
+
+RUN jupyter nbextensions_configurator enable --user
+# RUN jupyter contrib nbextension install --user
+
+# USER root
+
+# RUN jupyter contrib nbextension install --system
+
+# USER $NB_USER
+
 RUN conda clean -tipsy && \
     fix-permissions $CONDA_DIR
-
-
-
 
