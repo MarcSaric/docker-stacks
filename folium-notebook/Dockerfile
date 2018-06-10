@@ -27,6 +27,12 @@ RUN conda install --quiet --yes \
 
 RUN conda install -c conda-forge \
     'folium' \
+    'geoplot' \
+    'geopandas' \
+    'mplleaflet' \
+    'basemap' \
+    'gpxpy' \
+    'cartopy' \
     'jupyter_contrib_nbextensions' \
     'jupyter_nbextensions_configurator'
 
