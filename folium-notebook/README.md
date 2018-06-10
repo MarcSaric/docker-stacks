@@ -1,4 +1,4 @@
-![docker pulls](https://img.shields.io/docker/pulls/marcsaric/biopython-notebook.svg) ![docker stars](https://img.shields.io/docker/stars/marcsaric/biopython-notebook.svg) [![](https://images.microbadger.com/badges/image/marcsaric/biopython-notebook.svg)](https://microbadger.com/images/marcsaric/biopython-notebook "marcsaric/biopython-notebook image metadata")
+![docker pulls](https://img.shields.io/docker/pulls/marcsaric/folium-notebook.svg) ![docker stars](https://img.shields.io/docker/stars/marcsaric/folium-notebook.svg) [![](https://images.microbadger.com/badges/image/marcsaric/folium-notebook.svg)](https://microbadger.com/images/marcsaric/folium-notebook "marcsaric/folium-notebook image metadata")
 
 # Fork of Jupyter Notebook Data Science Stack
 
@@ -11,6 +11,7 @@ This is fork of the [jupyter/datascience-notebook](https://github.com/jupyter/do
 * pandas, matplotlib, scipy, seaborn, scikit-learn, scikit-image, sympy, cython, patsy, statsmodel, cloudpickle, dill, numba, bokeh pre-installed
 * bio_corex as a machine-learning package
 * Biopython
+* folium (for interactive maps)
 * Unprivileged user `jovyan` (uid=1000, configurable, see options) in group `users` (gid=100) with ownership over `/home/jovyan` and `/opt/conda`
 * [tini](https://github.com/krallin/tini) as the container entrypoint and [start-notebook.sh](../base-notebook/start-notebook.sh) as the default command
 * A [start-singleuser.sh](../base-notebook/start-singleuser.sh) script useful for running a single-user instance of the Notebook server, as required by JupyterHub
@@ -22,7 +23,7 @@ This is fork of the [jupyter/datascience-notebook](https://github.com/jupyter/do
 The following command starts a container with the Notebook server listening for HTTP connections on port 8888 with a randomly generated authentication token configured.
 
 ```
-docker run -it --rm -p 8888:8888 marcsaric/biopython-notebook
+docker run -it --rm -p 8888:8888 marcsaric/folium-notebook
 ```
 
 Take note of the authentication token included in the notebook startup log messages. Include it in the URL you visit to access the Notebook server or enter it in the Notebook login form.
@@ -34,19 +35,19 @@ The Docker container executes a [`start-notebook.sh` script](../base-notebook/st
 You can pass [Jupyter command line options](https://jupyter.readthedocs.io/en/latest/projects/jupyter-command.html) through the `start-notebook.sh` script when launching the container. For example, to secure the Notebook server with a custom password hashed using `IPython.lib.passwd()` instead of the default token, run the following:
 
 ```
-docker run -d -p 8888:8888 marcsaric/biopython-notebook start-notebook.sh --NotebookApp.password='sha1:74ba40f8a388:c913541b7ee99d15d5ed31d4226bf7838f83a50e'
+docker run -d -p 8888:8888 marcsaric/folium-notebook start-notebook.sh --NotebookApp.password='sha1:74ba40f8a388:c913541b7ee99d15d5ed31d4226bf7838f83a50e'
 ```
 
 For example, to set the base URL of the notebook server, run the following:
 
 ```
-docker run -d -p 8888:8888 marcsaric/biopython-notebook start-notebook.sh --NotebookApp.base_url=/some/path
+docker run -d -p 8888:8888 marcsaric/folium-notebook start-notebook.sh --NotebookApp.base_url=/some/path
 ```
 
 For example, to disable all authentication mechanisms (not a recommended practice):
 
 ```
-docker run -d -p 8888:8888 marcsaric/biopython-notebook start-notebook.sh --NotebookApp.token=''
+docker run -d -p 8888:8888 marcsaric/folium-notebook start-notebook.sh --NotebookApp.token=''
 ```
 
 You can sidestep the `start-notebook.sh` script and run your own commands in the container. See the *Alternative Commands* section later in this document for more information.
@@ -68,7 +69,7 @@ You may mount SSL key and certificate files into a container and configure Jupyt
 ```
 docker run -d -p 8888:8888 \
     -v /some/host/folder:/etc/ssl/notebook \
-    marcsaric/biopython-notebook start-notebook.sh \
+    marcsaric/folium-notebook start-notebook.sh \
     --NotebookApp.keyfile=/etc/ssl/notebook/notebook.key
     --NotebookApp.certfile=/etc/ssl/notebook/notebook.crt
 ```
@@ -78,7 +79,7 @@ Alternatively, you may mount a single PEM file containing both the key and certi
 ```
 docker run -d -p 8888:8888 \
     -v /some/host/folder/notebook.pem:/etc/ssl/notebook.pem \
-    marcsaric/biopython-notebook start-notebook.sh \
+    marcsaric/folium-notebook start-notebook.sh \
     --NotebookApp.certfile=/etc/ssl/notebook.pem
 ```
 
@@ -112,13 +113,13 @@ conda install some-package
 The `start.sh` script supports the same features as the default `start-notebook.sh` script (e.g., `GRANT_SUDO`), but allows you to specify an arbitrary command to execute. For example, to run the text-based `ipython` console in a container, do the following:
 
 ```
-docker run -it --rm marcsaric/biopython-notebook start.sh ipython
+docker run -it --rm marcsaric/folium-notebook start.sh ipython
 ```
 
 Or, to run JupyterLab instead of the classic notebook, run the following:
 
 ```
-docker run -it --rm -p 8888:8888 marcsaric/biopython-notebook start.sh jupyter lab
+docker run -it --rm -p 8888:8888 marcsaric/folium-notebook start.sh jupyter lab
 ```
 
 This script is particularly useful when you derive a new Dockerfile from this image and install additional Jupyter applications with subcommands like `jupyter console`, `jupyter kernelgateway`, etc.
