@@ -31,6 +31,7 @@ RUN conda install --quiet --yes \
     'htseq'
 
 RUN conda install -c conda-forge \
+    'ggplot' \
     'jupyter_contrib_nbextensions' \
     'jupyter_nbextensions_configurator'
 
