@@ -17,15 +17,15 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 USER $NB_USER
+############################
 
-# Add Biopython and other bioinformatics tools from Conda
+# Add folium and other bioinformatics tools from Conda
 RUN conda install --quiet --yes \
-    -c anaconda biopython && \
-    conda install -c anaconda autopep8 && \
-    conda install -c bioconda pysam && \
-    conda install -c bioconda pysamstats 
+    -c anaconda \
+    'autopep8'
 
 RUN conda install -c conda-forge \
+    'ggplot' \
     'folium' \
     'geoplot' \
     'geopandas' \
@@ -33,17 +33,13 @@ RUN conda install -c conda-forge \
     'basemap' \
     'gpxpy' \
     'cartopy' \
+    'bokeh' \
+    'altair' \
     'jupyter_contrib_nbextensions' \
     'jupyter_nbextensions_configurator'
 
+# Activate nbextensions_configurator
 RUN jupyter nbextensions_configurator enable --user
-# RUN jupyter contrib nbextension install --user
-
-# USER root
-
-# RUN jupyter contrib nbextension install --system
-
-# USER $NB_USER
 
 RUN conda clean -tipsy && \
     fix-permissions $CONDA_DIR
