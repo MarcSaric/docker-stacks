@@ -38,6 +38,9 @@ RUN conda install -c conda-forge \
     'jupyter_contrib_nbextensions' \
     'jupyter_nbextensions_configurator'
 
+RUN conda install -c damianavila82 rise
+RUN jupyter-nbextension install rise --py --sys-prefix
+
 # Activate nbextensions_configurator
 RUN jupyter nbextensions_configurator enable --user
 
