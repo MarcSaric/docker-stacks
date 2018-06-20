@@ -24,7 +24,8 @@ RUN conda install --quiet --yes \
     -c anaconda \
     'autopep8'
 
-RUN conda install -c conda-forge \
+RUN conda install --quiet --yes \
+    -c conda-forge \
     'ggplot' \
     'folium' \
     'geoplot' \
@@ -33,10 +34,14 @@ RUN conda install -c conda-forge \
     'basemap' \
     'gpxpy' \
     'cartopy' \
-    'bokeh' \
     'altair' \
     'jupyter_contrib_nbextensions' \
     'jupyter_nbextensions_configurator'
+
+RUN conda install --quiet --yes \
+    -c ioam \
+    'holoviews' \
+    'bokeh'
 
 RUN conda install -c damianavila82 rise
 RUN jupyter-nbextension install rise --py --sys-prefix
