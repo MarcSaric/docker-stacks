@@ -28,8 +28,6 @@ RUN conda install --quiet --yes \
     -c conda-forge \
     'ggplot' \
     'folium' \
-    'geoplot' \
-    'geopandas' \
     'mplleaflet' \
     'basemap' \
     'gpxpy' \
