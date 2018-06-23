@@ -41,6 +41,10 @@ RUN conda install --quiet --yes \
     'holoviews' \
     'bokeh'
 
+RUN conda install --quiet --yes \
+    -c pyviz \
+    'geoviews'
+
 RUN conda install -c damianavila82 rise
 RUN jupyter-nbextension install rise --py --sys-prefix
 
