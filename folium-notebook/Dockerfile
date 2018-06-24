@@ -33,6 +33,7 @@ RUN conda install --quiet --yes \
     'gpxpy' \
     'cartopy' \
     'altair' \
+    'datashader' \
     'jupyter_contrib_nbextensions' \
     'jupyter_nbextensions_configurator'
 
