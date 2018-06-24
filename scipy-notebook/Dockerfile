@@ -6,9 +6,9 @@ LABEL maintainer="Marc Saric <marc.saric@gmx.de>"
 
 USER root
 
-# libav-tools for matplotlib anim
+# ffmpeg for matplotlib anim
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends libav-tools && \
+    apt-get install -y --no-install-recommends ffmpeg && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -18,28 +18,28 @@ USER $NB_UID
 # Remove pyqt and qt pulled in for matplotlib since we're only ever going to
 # use notebook-friendly backends in these images
 RUN conda install --quiet --yes \
-    'blas=*=openblas' \
-    'ipywidgets=7.1*' \
-    'pandas=0.19*' \
+    'conda-forge::blas=*=openblas' \
+    'ipywidgets=7.2*' \
+    'pandas=0.23*' \
     'numexpr=2.6*' \
-    'matplotlib=2.0*' \
-    'scipy=0.19*' \
-    'seaborn=0.7*' \
+    'matplotlib=2.2*' \
+    'scipy=1.1*' \
+    'seaborn=0.8*' \
     'scikit-learn=0.19*' \
-    'scikit-image=0.13*' \
-    'sympy=1.0*' \
-    'cython=0.25*' \
-    'patsy=0.4*' \
-    'statsmodels=0.8*' \
-    'cloudpickle=0.2*' \
+    'scikit-image=0.14*' \
+    'sympy=1.1*' \
+    'cython=0.28*' \
+    'patsy=0.5*' \
+    'statsmodels=0.9*' \
+    'cloudpickle=0.5*' \
     'dill=0.2*' \
-    'numba=0.31*' \
+    'numba=0.38*' \
     'bokeh=0.12*' \
-    'sqlalchemy=1.1*' \
-    'hdf5=1.8.17' \
-    'h5py=2.6*' \
+    'sqlalchemy=1.2*' \
+    'hdf5=1.10*' \
+    'h5py=2.7*' \
     'vincent=0.4.*' \
-    'beautifulsoup4=4.5.*' \
+    'beautifulsoup4=4.6.*' \
     'protobuf=3.*' \
     'xlrd=1.1.*'  \
     'ipyparallel=6.*' && \

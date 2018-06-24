@@ -26,25 +26,14 @@ RUN conda install --quiet --yes \
 
 RUN conda install --quiet --yes \
     -c conda-forge \
-    'ggplot' \
     'folium' \
-    'mplleaflet' \
-    'basemap' \
     'gpxpy' \
-    'cartopy' \
-    'altair' \
-    'datashader' \
     'jupyter_contrib_nbextensions' \
     'jupyter_nbextensions_configurator'
 
 RUN conda install --quiet --yes \
-    -c ioam \
-    'holoviews' \
-    'bokeh'
-
-RUN conda install --quiet --yes \
     -c pyviz \
-    'geoviews'
+    'pyviz' 
 
 RUN conda install -c damianavila82 rise
 RUN jupyter-nbextension install rise --py --sys-prefix

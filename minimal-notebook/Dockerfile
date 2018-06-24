@@ -37,7 +37,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     texlive-latex-extra \
     texlive-xetex \
     unzip \
-    vim \
+    nano \
     && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
