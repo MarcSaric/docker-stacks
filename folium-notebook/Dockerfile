@@ -45,3 +45,4 @@ RUN jupyter nbextensions_configurator enable --user
 RUN conda clean -tipsy && \
     fix-permissions $CONDA_DIR
 
+
