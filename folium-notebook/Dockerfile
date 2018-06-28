@@ -26,6 +26,7 @@ RUN conda install --quiet --yes \
 
 RUN conda install --quiet --yes \
     -c conda-forge \
+    'pandas=0.22*' \
     'folium' \
     'gpxpy' \
     'jupyter_contrib_nbextensions' \
