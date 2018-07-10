@@ -53,8 +53,8 @@ RUN conda config --system --append channels r && \
     'r-crayon=1.3*' \
     'r-randomforest=4.6*' \
     'r-htmltools=0.3*' \
-    'r-sparklyr=0.7*' \
-    'r-htmlwidgets=1.0*' \
+    'r-sparklyr' \
+    'r-htmlwidgets' \
     'r-hexbin=1.27*' && \
     conda clean -tipsy && \
     fix-permissions $CONDA_DIR && \
