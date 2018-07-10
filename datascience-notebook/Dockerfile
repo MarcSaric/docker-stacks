@@ -43,7 +43,7 @@ RUN conda config --system --append channels r && \
     'r-devtools=1.13*' \
     'r-tidyverse=1.1*' \
     'r-shiny=1.0*' \
-    'r-rmarkdown=1.8*' \
+    'r-rmarkdown' \
     'r-forecast=8.2*' \
     'r-rsqlite=2.0*' \
     'r-reshape2=1.4*' \
