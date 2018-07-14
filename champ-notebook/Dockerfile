@@ -16,5 +16,5 @@ USER $NB_USER
 
 # Add ChAMP manually, as it is not in any of the conda repositories
 # https://bioconductor.org/packages/release/bioc/html/ChAMP.html
-RUN R -e 'source("https://bioconductor.org/biocLite.R");biocLite(c("minfi","ChAMPdata","Illumina450ProbeVariants.db","sva","IlluminaHumanMethylation450kmanifest","limma","RPMM","DNAcopy","preprocessCore","impute","marray","wateRmelon","goseq","plyr","GenomicRanges","RefFreeEWAS","qvalue","isva","doParallel","bumphunter","quadprog","shiny","shinythemes","plotly","RColorBrewer","DMRcate","dendextend","IlluminaHumanMethylationEPICmanifest","FEM","matrixStats","missMethyl","combinat"))'
-
+RUN R -e 'Sys.setenv(R_MAX_NUM_DLLS = 512);source("https://bioconductor.org/biocLite.R");biocLite(c("minfi","ChAMPdata","Illumina450ProbeVariants.db","sva","IlluminaHumanMethylation450kmanifest","limma","RPMM","DNAcopy","preprocessCore","impute","marray","wateRmelon","goseq","plyr","GenomicRanges","RefFreeEWAS","qvalue","isva","doParallel","bumphunter","quadprog","shiny","shinythemes","plotly","RColorBrewer","DMRcate","dendextend","IlluminaHumanMethylationEPICmanifest","FEM","matrixStats","missMethyl","combinat"))'
+RUN R -e 'Sys.setenv(R_MAX_NUM_DLLS = 512);source("https://bioconductor.org/biocLite.R");biocLite("ChAMP")'
