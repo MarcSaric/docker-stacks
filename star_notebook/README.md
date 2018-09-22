@@ -2,7 +2,7 @@
 
 # Extension of the Data Science Stack
 
-This is an extension to the fork of the [jupyter/datascience-notebook](https://github.com/jupyter/docker-stacks/tree/master/datascience-notebook) stack adding some modifications to run STAR according to the ICGC pipeline published on https://docs.gdc.cancer.gov/Data/Bioinformatics_Pipelines/Expression_mRNA_Pipeline/.
+This is an extension to the fork of the [jupyter/scipy-notebook](https://github.com/jupyter/docker-stacks/tree/master/scipy-notebook) stack adding some modifications to run STAR according to the ICGC pipeline published on https://docs.gdc.cancer.gov/Data/Bioinformatics_Pipelines/Expression_mRNA_Pipeline/.
 
 Please visit the documentation site for help using this image and others.
 

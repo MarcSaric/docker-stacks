@@ -42,18 +42,16 @@ RUN     wget https://github.com/alexdobin/STAR/archive/STAR_2.4.0i.tar.gz
 RUN     tar xvzf STAR_2.4.0i.tar.gz
 RUN     cp /opt/STAR-STAR_2.4.0i/bin/Linux_x86_64/STAR /opt/bin/
 
+ENV	PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:$PATH
+
 # Install python packages FIXME: Could be done using conda to be consistent
 RUN     pip install lxml
-
-
-ENV	PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin
-
-# Cleanup conda (may be unneccessary)  
-USER $NB_USER
 
 RUN conda clean -tipsy && \
     fix-permissions $CONDA_DIR
 
-USER $NB_USER
+# Reset to jovian home
+WORKDIR /home/$NB_USER
+USER $NB_UID
 
 
