@@ -28,7 +28,7 @@ WORKDIR /opt
 
 RUN		mkdir /opt/bin
 
-#install samtools
+# Install samtools
 RUN     wget http://sourceforge.net/projects/samtools/files/samtools/0.1.19/samtools-0.1.19.tar.bz2
 RUN     tar xvjf samtools-0.1.19.tar.bz2
 RUN     cd /opt/samtools-0.1.19 && make
@@ -37,22 +37,12 @@ RUN     mkdir /usr/local/include/bam
 RUN     cp /opt/samtools-0.1.19/*.h /usr/local/include/bam/
 RUN		cp /opt/samtools-0.1.19/samtools /opt/bin/
 
-#install bowtie
-RUN		wget http://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.2.3/bowtie2-2.2.3-source.zip
-RUN		unzip bowtie2-2.2.3-source.zip
-RUN		cd /opt/bowtie2-2.2.3 && make && cp bowtie2* /opt/bin/
-
-#install tophat
-RUN     curl -O http://ccb.jhu.edu/software/tophat/downloads/tophat-2.0.12.tar.gz
-RUN     tar xvzf tophat-2.0.12.tar.gz
-RUN     cd /opt/tophat-2.0.12 && ./configure --prefix=/opt --with-boost-libdir=/usr/lib/x86_64-linux-gnu/ && make && make install
-
-#install STAR
+# Install STAR
 RUN     wget https://github.com/alexdobin/STAR/archive/STAR_2.4.0i.tar.gz
 RUN     tar xvzf STAR_2.4.0i.tar.gz
 RUN     cp /opt/STAR-STAR_2.4.0i/bin/Linux_x86_64/STAR /opt/bin/
 
-#install python packages
+# Install python packages FIXME: Could be done using conda to be consistent
 RUN     pip install lxml
 
 
