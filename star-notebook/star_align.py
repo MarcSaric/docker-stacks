@@ -33,9 +33,9 @@ def scan_workdir(base):
                 o[basename].append(i)
             except KeyError:
                 o[basename] = [i]
-        if not all( (len(i) == 2 for i in o.values())):
+        if not all( (len(i) == 2 for i in list(o.values()))):
             raise Exception("Missing Pair")
-        return ( 'cat', list( (os.path.basename(i), o[i][0], o[i][1]) for i in o.keys()), 'PE') 
+        return ( 'cat', list( (os.path.basename(i), o[i][0], o[i][1]) for i in list(o.keys())), 'PE') 
 
     ### unzipped fastq input
     fastq_files = walk_dir(base, "*_R[12]_001.fastq")
@@ -44,9 +44,9 @@ def scan_workdir(base):
         for i in fastq_files:
             basename = re.sub(r'_R[12]_001.fastq$', '', i)
             o[basename] = o.get(basename, 0) + 1
-        if not all( (i == 2 for i in o.values())):
+        if not all( (i == 2 for i in list(o.values()))):
             raise Exception("Missing Pair")
-        return ( 'cat', list( (os.path.basename(i), "%s_R1_001.fastq" % i,"%s_R2_001.fastq" % i) for i in o.keys()), 'PE') 
+        return ( 'cat', list( (os.path.basename(i), "%s_R1_001.fastq" % i,"%s_R2_001.fastq" % i) for i in list(o.keys())), 'PE') 
 
     ### unzipped fastq input
     fastq_files = walk_dir(base, "*_[12].fastq")
@@ -55,9 +55,9 @@ def scan_workdir(base):
         for i in fastq_files:
             basename = re.sub(r'_[12].fastq$', '', i)
             o[basename] = o.get(basename, 0) + 1
-        if not all( (i == 2 for i in o.values())):
+        if not all( (i == 2 for i in list(o.values()))):
             raise Exception("Missing Pair")
-        return ( 'cat', list( (os.path.basename(i), "%s_1.fastq" % i,"%s_2.fastq" % i) for i in o.keys()), 'PE') 
+        return ( 'cat', list( (os.path.basename(i), "%s_1.fastq" % i,"%s_2.fastq" % i) for i in list(o.keys())), 'PE') 
 
     ### unzipped fastq input
     fastq_files = walk_dir(base, "*[.][12].fastq")
@@ -66,9 +66,9 @@ def scan_workdir(base):
         for i in fastq_files:
             basename = re.sub(r'[.][12].fastq$', '', i)
             o[basename] = o.get(basename, 0) + 1
-        if not all( (i == 2 for i in o.values())):
+        if not all( (i == 2 for i in list(o.values()))):
             raise Exception("Missing Pair")
-        return ( 'cat', list( (os.path.basename(i), "%s.1.fastq" % i,"%s.2.fastq" % i) for i in o.keys()), 'PE') 
+        return ( 'cat', list( (os.path.basename(i), "%s.1.fastq" % i,"%s.2.fastq" % i) for i in list(o.keys())), 'PE') 
 
     ### unzipped fastq input
     fastq_files = walk_dir(base, "*.fastq[12]")
@@ -77,9 +77,9 @@ def scan_workdir(base):
         for i in fastq_files:
             basename = re.sub(r'.fastq[12]$', '', i)
             o[basename] = o.get(basename, 0) + 1
-        if not all( (i == 2 for i in o.values())):
+        if not all( (i == 2 for i in list(o.values()))):
             raise Exception("Missing Pair")
-        return ( 'cat', list( (os.path.basename(i), "%s.fastq1" % i,"%s.fastq2" % i) for i in o.keys()), 'PE') 
+        return ( 'cat', list( (os.path.basename(i), "%s.fastq1" % i,"%s.fastq2" % i) for i in list(o.keys())), 'PE') 
 
     ### unzipped txt input
     fastq_files = walk_dir(base, "*_[12]_sequence.txt")
@@ -88,9 +88,9 @@ def scan_workdir(base):
         for i in fastq_files:
             basename = re.sub(r'_[12]_sequence.txt$', '', i)
             o[basename] = o.get(basename, 0) + 1
-        if not all( (i == 2 for i in o.values())):
+        if not all( (i == 2 for i in list(o.values()))):
             raise Exception("Missing Pair")
-        return ( 'cat', list( (os.path.basename(i), "%s_1_sequence.txt" % i,"%s_2_sequence.txt" % i) for i in o.keys()), 'PE') 
+        return ( 'cat', list( (os.path.basename(i), "%s_1_sequence.txt" % i,"%s_2_sequence.txt" % i) for i in list(o.keys())), 'PE') 
     
     ### gzipped input
     fastq_gz_files = walk_dir(base, "*_[12].fastq.gz")
@@ -99,9 +99,9 @@ def scan_workdir(base):
         for i in fastq_gz_files:
             basename = re.sub(r'_[12].fastq.gz$', '', i)
             o[basename] = o.get(basename, 0) + 1
-        if not all( (i == 2 for i in o.values())):
+        if not all( (i == 2 for i in list(o.values()))):
             raise Exception("Missing Pair")
-        return ( 'zcat', list( (os.path.basename(i), "%s_1.fastq.gz" % i,"%s_2.fastq.gz" % i) for i in o.keys()), 'PE') 
+        return ( 'zcat', list( (os.path.basename(i), "%s_1.fastq.gz" % i,"%s_2.fastq.gz" % i) for i in list(o.keys())), 'PE') 
 
     ### bzipped input
     fastq_bz_files = walk_dir(base, "*_[12].fastq.bz")
@@ -110,9 +110,9 @@ def scan_workdir(base):
         for i in fastq_gz_files:
             basename = re.sub(r'_[12].fastq.bz$', '', i)
             o[basename] = o.get(basename, 0) + 1
-        if not all( (i == 2 for i in o.values())):
+        if not all( (i == 2 for i in list(o.values()))):
             raise Exception("Missing Pair")
-        return ( 'bzcat', list( (os.path.basename(i), "%s_1.fastq.bz" % i,"%s_2.fastq.bz" % i) for i in o.keys()), 'PE') 
+        return ( 'bzcat', list( (os.path.basename(i), "%s_1.fastq.bz" % i,"%s_2.fastq.bz" % i) for i in list(o.keys())), 'PE') 
 
     ### scan for single-end files
     #############################
@@ -321,7 +321,7 @@ if __name__ == "__main__":
     if len(files) > 0:
         align_sets = (align_sets[0], [x for x in align_sets[1] if (re.sub('(_[12]){,1}.fastq(.(gz|bz2|bz))*', '', os.path.basename(x[1])) in files)], align_sets[2])
         if len(align_sets[1]) == 0:
-            print >> sys.stderr, 'All input files have been filtered out - no input remaining. Terminating.'
+            print('All input files have been filtered out - no input remaining. Terminating.', file=sys.stderr)
             sys.exit()
 
     ### use filename stub as read group label
@@ -395,7 +395,7 @@ if __name__ == "__main__":
         else:
             align_dir_1st = os.path.abspath( tempfile.mkdtemp(dir=args.workDir, prefix="star_aligndir_1st_") )
             genome_dir_1st = os.path.abspath( tempfile.mkdtemp(dir=args.workDir, prefix="star_genomedir_1st_") )
-        print "Running", cmd
+        print("Running", cmd)
         subprocess.check_call(cmd, shell=True, cwd=align_dir_1st)
 
         ### build index using provided genome fasta as well as junctions from first run
@@ -404,7 +404,7 @@ if __name__ == "__main__":
 --sjdbOverhang %i \
 --runThreadN %i \
 --sjdbFileChrStartEnd %s""" % (genome_dir_1st, args.genomeFastaFiles, args.sjdbOverhang, args.runThreadN, os.path.join(align_dir_1st, 'SJ.out.tab')) 
-        print "Running", cmd
+        print("Running", cmd)
         subprocess.check_call(cmd, shell=True, cwd=align_dir_1st)
 
         ### replace index for the second run with the one currently built
@@ -504,7 +504,7 @@ if __name__ == "__main__":
         align_dir = os.path.abspath( tempfile.mkdtemp(dir=os.environ[args.useTMP], prefix="star_aligndir_") )
     else:
         align_dir = os.path.abspath( tempfile.mkdtemp(dir=args.workDir, prefix="star_aligndir_") )
-    print "Running", cmd
+    print("Running", cmd)
     subprocess.check_call(cmd, shell=True, cwd=align_dir)
 
     ### move output file

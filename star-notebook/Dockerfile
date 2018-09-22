@@ -44,6 +44,9 @@ RUN     cp /opt/STAR-STAR_2.4.0i/bin/Linux_x86_64/STAR /opt/bin/
 
 ENV	PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:$PATH
 
+# Install the star wrapper from local
+COPY star_align.py /opt/bin/star_align.py 
+
 # Install python packages FIXME: Could be done using conda to be consistent
 RUN     pip install lxml
 
