@@ -29,26 +29,26 @@ WORKDIR /opt
 RUN		mkdir /opt/bin
 
 # Install samtools
-RUN     wget http://sourceforge.net/projects/samtools/files/samtools/0.1.19/samtools-0.1.19.tar.bz2
-RUN     tar xvjf samtools-0.1.19.tar.bz2
-RUN     cd /opt/samtools-0.1.19 && make
-RUN     cp /opt/samtools-0.1.19/*.a /usr/local/lib/
-RUN     mkdir /usr/local/include/bam
-RUN     cp /opt/samtools-0.1.19/*.h /usr/local/include/bam/
-RUN		cp /opt/samtools-0.1.19/samtools /opt/bin/
+RUN wget http://sourceforge.net/projects/samtools/files/samtools/0.1.19/samtools-0.1.19.tar.bz2 && \
+    tar xvjf samtools-0.1.19.tar.bz2 && \
+    cd /opt/samtools-0.1.19 && make && \
+    cp /opt/samtools-0.1.19/*.a /usr/local/lib/ && \
+    mkdir /usr/local/include/bam && \
+    cp /opt/samtools-0.1.19/*.h /usr/local/include/bam/ && \
+    cp /opt/samtools-0.1.19/samtools /opt/bin/
 
 # Install STAR
-RUN     wget https://github.com/alexdobin/STAR/archive/STAR_2.4.0i.tar.gz
-RUN     tar xvzf STAR_2.4.0i.tar.gz
-RUN     cp /opt/STAR-STAR_2.4.0i/bin/Linux_x86_64/STAR /opt/bin/
+RUN wget https://github.com/alexdobin/STAR/archive/STAR_2.4.0i.tar.gz && \
+    tar xvzf STAR_2.4.0i.tar.gz && \
+    cp /opt/STAR-STAR_2.4.0i/bin/Linux_x86_64/STAR /opt/bin/
 
-ENV	PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:$PATH
+ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:$PATH
 
 # Install the star wrapper from local
 COPY star_align.py /opt/bin/star_align.py 
 
 # Install python packages FIXME: Could be done using conda to be consistent
-RUN     pip install lxml
+RUN conda install -c anaconda lxml 
 
 RUN conda clean -tipsy && \
     fix-permissions $CONDA_DIR
@@ -56,5 +56,4 @@ RUN conda clean -tipsy && \
 # Reset to jovian home
 WORKDIR /home/$NB_USER
 USER $NB_UID
-
 
