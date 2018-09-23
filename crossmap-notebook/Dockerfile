@@ -8,10 +8,6 @@ LABEL maintainer="Marc Saric <marc.saric@gmx.de>"
 
 USER root
 
-# Testinstall the bash-kernel from https://github.com/takluyver/bash_kernel
-RUN pip install bash_kernel \
-    && python -m bash_kernel.install
-
 # Install all OS dependencies for fully functional notebook server
 RUN apt-get update && apt-get install -yq --no-install-recommends \
     less \

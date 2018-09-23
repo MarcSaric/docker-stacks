@@ -41,5 +41,9 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Install the bash-kernel from https://github.com/takluyver/bash_kernel
+RUN pip install bash_kernel \
+    && python -m bash_kernel.install
+
 # Switch back to jovyan to avoid accidental container runs as root
 USER $NB_UID

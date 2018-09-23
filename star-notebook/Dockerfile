@@ -13,20 +13,37 @@ RUN apt-get update && \
     tzdata \
     libmariadb-client-lgpl-dev \
     gfortran \
-    gcc && apt-get clean && \
+    gcc && \
+    apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-
-# Testinstall the bash-kernel from https://github.com/takluyver/bash_kernel
-RUN pip install bash_kernel \
-    && python -m bash_kernel.install
-
 # Add tools as per ICGC RNS-Seq Align container
-RUN apt-get update
-RUN apt-get install -y curl wget g++ make python libboost-dev libboost-thread-dev libboost-system-dev zlib1g-dev ncurses-dev unzip gzip bzip2 libxml2-dev libxslt-dev python-dev python-pip
+# FIXME: There may be duplicated packages here (but this has no negative consequences)
+RUN apt-get update && \
+    apt-get install -y \
+    curl \
+    wget \
+    g++ \
+    make \
+    python \
+    libboost-dev \
+    libboost-thread-dev \
+    libboost-system-dev \
+    zlib1g-dev \
+    ncurses-dev \
+    unzip \
+    gzip \
+    bzip2 \
+    libxml2-dev \
+    libxslt-dev \
+    python-dev \
+    python-pip && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 WORKDIR /opt
 
-RUN		mkdir /opt/bin
+RUN mkdir /opt/bin
 
 # Install samtools
 RUN wget http://sourceforge.net/projects/samtools/files/samtools/0.1.19/samtools-0.1.19.tar.bz2 && \
@@ -47,9 +64,8 @@ ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:$
 # Install the star wrapper from local
 COPY star_align.py /opt/bin/star_align.py 
 
-# Install python packages FIXME: Could be done using conda to be consistent
+# Install python packages
 RUN conda install -c anaconda lxml 
-
 RUN conda clean -tipsy && \
     fix-permissions $CONDA_DIR
 
