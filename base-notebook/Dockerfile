@@ -17,6 +17,7 @@ RUN apt-get update && apt-get -yq dist-upgrade \
  && apt-get install -yq --no-install-recommends \
     wget \
     bzip2 \
+    pigz \
     ca-certificates \
     sudo \
     locales \
