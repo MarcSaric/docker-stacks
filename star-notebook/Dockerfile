@@ -14,7 +14,6 @@ RUN apt-get update && \
     libmariadb-client-lgpl-dev \
     gfortran \
     gcc && \
-    pigz && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
