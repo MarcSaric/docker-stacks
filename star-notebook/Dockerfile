@@ -14,6 +14,7 @@ RUN apt-get update && \
     libmariadb-client-lgpl-dev \
     gfortran \
     gcc && \
+    pigz && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -73,3 +74,7 @@ RUN conda clean -tipsy && \
 WORKDIR /home/$NB_USER
 USER $NB_UID
 
+# Finally fix the git access
+# FIXME: We would also need to copy or link the .ssh and .gpg keys
+RUN git config --global user.email "marc.saric@gmx.de"
+RUN git config --global user.name "Marc Saric"
