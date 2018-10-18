@@ -60,7 +60,10 @@ RUN conda config --system --append channels r && \
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER
 
-# Add TCGAbiolinks from Bioconductor
+RUN R -e 'library("devtools");\
+          install_github(c("jrnold/ggthemes"))'
+
+# Add DESeq2 from Bioconductor
 RUN R -e 'source("https://bioconductor.org/biocLite.R");\
                   biocLite("TCGAbiolinks");\
                   biocLite("DESeq2")'
