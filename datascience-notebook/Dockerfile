@@ -63,8 +63,14 @@ RUN conda config --system --append channels r && \
 RUN R -e 'library("devtools");\
           install_github(c("jrnold/ggthemes"))'
 
+
+# Install TCGAbiolinks from dev
+RUN R -e 'source("https://bioconductor.org/biocLite.R");\
+	  biocLite("BiocInstaller")'
+Run R -e 'library("devtools");\
+          install_github("BioinformaticsFMRP/TCGAbiolinks")'
+
 # Add DESeq2 from Bioconductor
 RUN R -e 'source("https://bioconductor.org/biocLite.R");\
-                  biocLite("TCGAbiolinks");\
                   biocLite("DESeq2")'
 
