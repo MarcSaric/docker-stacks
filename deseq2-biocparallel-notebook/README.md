@@ -1,4 +1,4 @@
-![docker pulls](https://img.shields.io/docker/pulls/marcsaric/deseq2_biocparallel-notebook.svg) ![docker stars](https://img.shields.io/docker/stars/marcsaric/deseq2_biocparallel-notebook.svg) [![](https://images.microbadger.com/badges/image/marcsaric/deseq2_biocparallel-notebook.svg)](https://microbadger.com/images/marcsaric/deseq2_biocparallel-notebook "marcsaric/deseq2_biocparallel-notebook image metadata")
+![docker pulls](https://img.shields.io/docker/pulls/marcsaric/deseq2-biocparallel-notebook.svg) ![docker stars](https://img.shields.io/docker/stars/marcsaric/deseq2-biocparallel-notebook.svg) [![](https://images.microbadger.com/badges/image/marcsaric/deseq2-biocparallel-notebook.svg)](https://microbadger.com/images/marcsaric/deseq2-biocparallel-notebook "marcsaric/deseq2-biocparallel-notebook image metadata")
 
 # Extension of Jupyter Notebook Data Science Stack
 
