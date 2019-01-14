@@ -13,8 +13,7 @@ USER $NB_UID
 # Add DESeq2 dependencies from Bioconductor
 # For historic reasons DESeq2 is already in the datascience-notebook
 RUN R -e 'source("https://bioconductor.org/biocLite.R");\
-                 biocLite("apeglm")'
+                 biocLite(c("apeglm", "BiocParallel", "DEGreport"))'
 
-RUN R -e 'source("https://bioconductor.org/biocLite.R");\
-                 biocLite("BiocParallel")'
+
 
