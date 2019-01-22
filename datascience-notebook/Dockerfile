@@ -67,7 +67,7 @@ RUN R -e 'library("devtools");\
 # Install TCGAbiolinks from dev
 RUN R -e 'source("https://bioconductor.org/biocLite.R");\
 	  biocLite("BiocInstaller")'
-Run R -e 'library("devtools");\
+RUN R -e 'library("devtools");\
           install_github("BioinformaticsFMRP/TCGAbiolinks")'
 
 # Add DESeq2 from Bioconductor
