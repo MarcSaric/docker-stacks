@@ -10,6 +10,13 @@ ARG TEST_ONLY_BUILD
 
 USER $NB_UID
 
+# R packages which gets installed globally.
+RUN  conda install --quiet --yes \
+    'r-gplots' \
+    'r-ape' 
+    
+
+RUN R -e 'install.packages(c("pheatmap", "fastcluster"), repo = "https://cloud.r-project.org/")'
 # Add DESeq2 dependencies from Bioconductor
 # For historic reasons DESeq2 is already in the datascience-notebook
 RUN R -e 'source("https://bioconductor.org/biocLite.R");\
