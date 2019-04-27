@@ -20,7 +20,7 @@ RUN R -e 'install.packages(c("pheatmap", "fastcluster"), repo = "https://cloud.r
 # Add DESeq2 dependencies from Bioconductor
 # For historic reasons DESeq2 is already in the datascience-notebook
 RUN R -e 'source("https://bioconductor.org/biocLite.R");\
-                 biocLite(c("apeglm", "BiocParallel", "DEGreport", "vsn"))'
+                 biocLite(c("apeglm", "BiocParallel", "DEGreport", "vsn", "goseq", "EnsDb.Hsapiens.v79", "org.Hs.eg.db"))'
 
 
 
