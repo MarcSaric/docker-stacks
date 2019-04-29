@@ -1,23 +1,23 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
-FROM jupyter/scipy-notebook
+ARG BASE_CONTAINER=jupyter/scipy-notebook
+FROM $BASE_CONTAINER
 
 LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 
 USER root
 
 # Spark dependencies
-ENV APACHE_SPARK_VERSION 2.3.1
+ENV APACHE_SPARK_VERSION 2.4.2
 ENV HADOOP_VERSION 2.7
 
 RUN apt-get -y update && \
     apt-get install --no-install-recommends -y openjdk-8-jre-headless ca-certificates-java && \
-    apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 RUN cd /tmp && \
-        wget -q http://apache.claz.org/spark/spark-${APACHE_SPARK_VERSION}/spark-${APACHE_SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz && \
-        echo "DC3A97F3D99791D363E4F70A622B84D6E313BD852F6FDBC777D31EAB44CBC112CEEAA20F7BF835492FB654F48AE57E9969F93D3B0E6EC92076D1C5E1B40B4696 *spark-${APACHE_SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz" | sha512sum -c - && \
+        wget -q http://mirrors.ukfast.co.uk/sites/ftp.apache.org/spark/spark-${APACHE_SPARK_VERSION}/spark-${APACHE_SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz && \
+        echo "16E3F803214923E3FD7D04B64D79E4B810E6E4A2723961443D09982FC104BA1A08DF029CE573633DCA7056340FA26B771EAFBDD3B5CEA14C1F01081D84575F02 *spark-${APACHE_SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz" | sha512sum -c - && \
         tar xzf spark-${APACHE_SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz -C /usr/local --owner root --group root --no-same-owner && \
         rm spark-${APACHE_SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz
 RUN cd /usr/local && ln -s spark-${APACHE_SPARK_VERSION}-bin-hadoop${HADOOP_VERSION} spark
@@ -33,7 +33,6 @@ RUN apt-get -y update && \
     apt-get -y update && \
     apt-get --no-install-recommends -y install mesos=1.2\* && \
     apt-get purge --auto-remove -y gnupg && \
-    apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 # Spark and Mesos config

@@ -2,7 +2,7 @@
 # Distributed under the terms of the Modified BSD License.
 
 # Ubuntu image 
-FROM ppc64le/ubuntu:trusty
+FROM ppc64le/ubuntu:18.04
 
 LABEL maintainer="Ilsiyar Gaynutdinov <ilsiyar_gaynutdinov@ru.ibm.com>"
 
@@ -21,7 +21,7 @@ RUN apt-get update && apt-get -yq dist-upgrade \
     locales \
     sudo \
     wget \
-    && apt-get clean && \
+    && \
     rm -rf /var/lib/apt/lists/*
 
 RUN echo "LANGUAGE=en_US.UTF-8" >> /etc/default/locale

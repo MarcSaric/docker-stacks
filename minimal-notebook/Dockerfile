@@ -1,8 +1,8 @@
 # Copyright (c) Jupyter Development Team.
 # This is a fork of the notebooks from Jupyter Dev Team.
 # Distributed under the terms of the Modified BSD License.
-
-FROM marcsaric/base-notebook
+ARG BASE_CONTAINER=marcsaric/base-notebook
+FROM $BASE_CONTAINER
 
 LABEL maintainer="Marc Saric <marc.saric@gmx.de>"
 
@@ -36,10 +36,10 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     texlive-latex-base \
     texlive-latex-extra \
     texlive-xetex \
+    tzdata \
     unzip \
     nano \
-    && apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*
 
 # Install the bash-kernel from https://github.com/takluyver/bash_kernel
 RUN pip install bash_kernel \

@@ -16,11 +16,14 @@ RUN  conda install --quiet --yes \
     'r-ape' 
     
 
-RUN R -e 'install.packages(c("pheatmap", "fastcluster"), repo = "https://cloud.r-project.org/")'
 # Add DESeq2 dependencies from Bioconductor
+RUN R -e 'install.packages(c("pheatmap", "fastcluster"), repo = "https://cloud.r-project.org/")'
+
+# Add DESeq2 from Bioconductor
+RUN R -e 'BiocManager::install(c("DESeq2"))'
+
 # For historic reasons DESeq2 is already in the datascience-notebook
-RUN R -e 'source("https://bioconductor.org/biocLite.R");\
-                 biocLite(c("apeglm", "BiocParallel", "DEGreport", "vsn", "goseq", "EnsDb.Hsapiens.v79", "org.Hs.eg.db"))'
+RUN R -e 'BiocManager::install(c("apeglm", "BiocParallel", "DEGreport", "vsn", "goseq", "EnsDb.Hsapiens.v79", "org.Hs.eg.db"))'
 
 
 
