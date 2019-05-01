@@ -16,11 +16,13 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     fonts-dejavu \
     gfortran \
-    gcc && \
+    gcc \
+    unzip && \
     rm -rf /var/lib/apt/lists/*
 
 # Fix a bug in some R-packages, which want /bin/gtar instead of /bin/tar
-RUN ln -s /bin/tar /bin/gtar
+# And try to fix https://github.com/r-lib/devtools/issues/1722
+RUN ln -s /bin/tar /bin/gtar && export TAR=/bin/tar
 
 USER $NB_UID
 
@@ -52,18 +54,30 @@ RUN conda config --system --append channels r && \
     'r-sparklyr=0.9*' \
     'r-htmlwidgets=1.2*' \
     'r-hexbin=1.27*' && \
-    conda clean -tipsy && \
     fix-permissions $CONDA_DIR && \
+    conda clean -tipsy && \
     fix-permissions /home/$NB_USER
 
+# Add devtools set some options and go
 RUN R -e 'library("devtools");\
+          options(unzip = "internal");\
           install_github(c("jrnold/ggthemes"))'
 
 
+# Add the Bioconductor installer and install the base packages
+RUN R -e 'options(repos=structure(c(CRAN="https://cloud.r-project.org" )));\
+          if (!requireNamespace("BiocManager")) {install.packages("BiocManager")};\
+          BiocManager::install()'
+
+# And we still have to install BiocInstaller to install TCGABiolinks. Yay!
+RUN R -e 'source("https://bioconductor.org/biocLite.R");\
+	      biocLite("BiocInstaller")'
+
+# Need to install some dependencies for TCGAbiolinks explicitly
+RUN R -e 'BiocManager::install(c("sesame", "EDASeq", "GenomicFeatures"))'
+
 # Install TCGAbiolinks from dev
-RUN R -e 'if (!requireNamespace("BiocManager"))\
-             install.packages("BiocManager")\
-          BiocManager::install();'
 RUN R -e 'library("devtools");\
+          options(unzip = "internal");\
           install_github("BioinformaticsFMRP/TCGAbiolinks")'
 

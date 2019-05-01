@@ -14,16 +14,21 @@ USER $NB_UID
 RUN  conda install --quiet --yes \
     'r-gplots' \
     'r-ape' 
-    
+
+# Add the Bioconductor installer and install the base packages
+RUN R -e 'if (!requireNamespace("BiocManager")) {install.packages("BiocManager")};\
+          BiocManager::install()'
 
 # Add DESeq2 dependencies from Bioconductor
-RUN R -e 'install.packages(c("pheatmap", "fastcluster"), repo = "https://cloud.r-project.org/")'
+RUN R -e 'install.packages(c("pheatmap", "fastcluster"), repo = "https://cloud.r-project.org")'
 
-# Add DESeq2 from Bioconductor
-RUN R -e 'BiocManager::install(c("DESeq2"))'
-
-# For historic reasons DESeq2 is already in the datascience-notebook
-RUN R -e 'BiocManager::install(c("apeglm", "BiocParallel", "DEGreport", "vsn", "goseq", "EnsDb.Hsapiens.v79", "org.Hs.eg.db"))'
-
-
-
+# # Add DESeq2 from Bioconductor and other packages
+RUN R -e 'BiocManager::install(c("apeglm", \
+                                 "BiocParallel", \
+                                 "DESeq2", \
+                                 "DEGreport", \
+                                 "vsn", \
+                                 "goseq", \
+                                 "EnsDb.Hsapiens.v86", \
+                                 "org.Hs.eg.db")\
+                               )'
