@@ -10,10 +10,10 @@ ARG TEST_ONLY_BUILD
 
 USER $NB_UID
 
-# Add the Bioconductor installer and install the base packages
+# Add the Bioconductor installer and install the GO packages from there
 RUN R -e 'if (!requireNamespace("BiocManager")) {install.packages("BiocManager")};\
           BiocManager::install(c("Rgraphviz", "GOsummaries", "GOSemSim", "GOSim", "GOexpress", "EnrichmentBrowser"))'
 
-# Add DESeq2 dependencies from Bioconductor
+# Add packages from CRAN
 RUN R -e 'install.packages(c("ontologyPlot", "GOplot"), repo = "https://cloud.r-project.org")'
 
