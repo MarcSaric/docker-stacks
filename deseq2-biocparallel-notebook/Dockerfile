@@ -30,5 +30,6 @@ RUN R -e 'BiocManager::install(c("apeglm", \
                                  "vsn", \
                                  "goseq", \
                                  "EnsDb.Hsapiens.v86", \
-                                 "org.Hs.eg.db")\
+                                 "org.Hs.eg.db", \
+                                 "Rsubread")\
                                )'
