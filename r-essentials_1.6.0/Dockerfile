@@ -2,7 +2,7 @@
 # Distributed under the terms of the Modified BSD License.
 FROM jupyter/minimal-notebook
 
-MAINTAINER Marc Saric <marc.saric@gmx.de>
+LABEL maintainer="Marc Saric <marc.saric@gmx.de>"
 
 USER root
 
