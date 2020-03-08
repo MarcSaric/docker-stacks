@@ -3,3 +3,7 @@ pytest
 recommonmark==0.5.0
 requests
 sphinx>=1.6
+sphinx-intl
+tabulate
+transifex-client
+

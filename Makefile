@@ -6,6 +6,7 @@
 SHELL:=bash
 OWNER:=jupyter
 ARCH:=$(shell uname -m)
+DIFF_RANGE?=master...HEAD
 
 # Need to list the images in build dependency order
 ifeq ($(ARCH),ppc64le)
@@ -48,6 +49,9 @@ build/%: ## build the latest image for a stack
 build-all: $(foreach I,$(ALL_IMAGES),arch_patch/$(I) build/$(I) ) ## build all stacks
 build-test-all: $(foreach I,$(ALL_IMAGES),arch_patch/$(I) build/$(I) test/$(I) ) ## build and test all stacks
 
+check-outdated/%: ## check the outdated conda packages in a stack and produce a report (experimental)
+	@TEST_IMAGE="$(OWNER)/$(notdir $@)" pytest test/test_outdated.py
+
 dev/%: ARGS?=
 dev/%: DARGS?=
 dev/%: PORT?=8888
@@ -60,8 +64,33 @@ dev-env: ## install libraries required to build docs and run tests
 docs: ## build HTML documentation
 	make -C docs html
 
-test/%: ## run tests against a stack
-	@TEST_IMAGE="$(OWNER)/$(notdir $@)" pytest test
+n-docs-diff: ## number of docs/ files changed since branch from master
+	@git diff --name-only $(DIFF_RANGE) -- docs/ ':!docs/locale' | wc -l | awk '{print $$1}'
 
-test/base-notebook: ## test supported options in the base notebook
-	@TEST_IMAGE="$(OWNER)/$(notdir $@)" pytest test base-notebook/test
+
+n-other-diff: ## number of files outside docs/ changed since branch from master
+	@git diff --name-only $(DIFF_RANGE) -- ':!docs/' | wc -l | awk '{print $$1}'
+
+run/%: ## run a bash in interactive mode in a stack
+	docker run -it --rm $(OWNER)/$(notdir $@) $(SHELL)
+
+run-sudo/%: ## run a bash in interactive mode as root in a stack
+	docker run -it --rm -u root $(OWNER)/$(notdir $@) $(SHELL)
+
+tx-en: ## rebuild en locale strings and push to master (req: GH_TOKEN)
+	@git config --global user.email "travis@travis-ci.org"
+	@git config --global user.name "Travis CI"
+	@git checkout master
+
+	@make -C docs clean gettext
+	@cd docs && sphinx-intl update -p _build/gettext -l en
+
+	@git add docs/locale/en
+	@git commit -m "[ci skip] Update en source strings (build: $$TRAVIS_JOB_NUMBER)"
+
+	@git remote add origin-tx https://$${GH_TOKEN}@github.com/jupyter/docker-stacks.git
+	@git push -u origin-tx master
+
+test/%: ## run tests against a stack (only common tests or common tests + specific tests)
+	@if [ ! -d "$(notdir $@)/test" ]; then TEST_IMAGE="$(OWNER)/$(notdir $@)" pytest -m "not info" test; \
+	else TEST_IMAGE="$(OWNER)/$(notdir $@)" pytest -m "not info" test $(notdir $@)/test; fi

@@ -1,776 +1,690 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2018- Project Jupyter
-# This file is distributed under the same license as the docker-stacks package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+# This file is distributed under the same license as the docker-stacks
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: docker-stacks latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-21 17:25-0400\n"
+"POT-Creation-Date: 2020-03-06 13:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
 
-# 9527c87037fb4592a05d144d80f69f89
-#: ../../contributing/features.md:1
+# d5ee2bafb9214b8ab9ce05ae9bc2ff43
+#: ../../contributing/features.md:1 77844e70b7ee462a9a7855521b2de785
 msgid "New Features"
-msgstr "New Features"
+msgstr ""
 
-# 81de205103144b289398603fa4aee789
-#: ../../contributing/features.md:3
+# 64c3ecc68ada47afada78f945253c9e9
+#: ../../contributing/features.md:3 24e1af9e9d0e499f9b2ab4e6636acaa3
 msgid ""
 "Thank you for contributing to the Jupyter Docker Stacks! We review pull "
 "requests of new features (e.g., new packages, new scripts, new flags) to "
-"balance the value of the images to the Jupyter community with the cost of "
-"maintaining the images over time."
+"balance the value of the images to the Jupyter community with the cost of"
+" maintaining the images over time."
 msgstr ""
-"Thank you for contributing to the Jupyter Docker Stacks! We review pull "
-"requests of new features (e.g., new packages, new scripts, new flags) to "
-"balance the value of the images to the Jupyter community with the cost of "
-"maintaining the images over time."
 
-# b35331d86206420aa8235d20ef037215
-#: ../../contributing/features.md:5
+# 5a3b2e0c02d04cd0913b53f5d7f7421d
+#: ../../contributing/features.md:5 ead019e014cf4adda9bdf07b7d013cc7
 msgid "Suggesting a New Feature"
-msgstr "Suggesting a New Feature"
-
-# 6c6b00518c1f4dc88049b82f213a36cc
-#: ../../contributing/features.md:7
-msgid ""
-"Please follow the process below to suggest a new feature for inclusion in "
-"one of the core stacks:"
 msgstr ""
-"Please follow the process below to suggest a new feature for inclusion in "
-"one of the core stacks:"
 
-# a9cd9d0730cc4159aa227e970ae2d9d0
-#: ../../contributing/features.md:9
+# c995f8cabb1d4b4fb53a9c56ae8e017b
+#: ../../contributing/features.md:7 e6d46f6fec9e46819721b334854de9b9
+msgid ""
+"Please follow the process below to suggest a new feature for inclusion in"
+" one of the core stacks:"
+msgstr ""
+
+# 851e3743c7044fa6bec396a46e06937d
+#: ../../contributing/features.md:9 97bddfa018c744c8999fe19b901bf695
 msgid "Open a GitHub issue describing the feature you'd like to contribute."
-msgstr "Open a GitHub issue describing the feature you'd like to contribute."
-
-# 8433ea2c70b94556b9a62c35cb88a4c8
-#: ../../contributing/features.md:10
-msgid ""
-"Discuss with the maintainers whether the addition makes sense in one of the "
-"core stacks, as a recipe in the documentation, as a community stack, or as "
-"something else entirely."
 msgstr ""
-"Discuss with the maintainers whether the addition makes sense in one of the "
-"core stacks, as a recipe in the documentation, as a community stack, or as "
-"something else entirely."
 
-# a995c15adfb7424e9852693b90569d7a
-#: ../../contributing/features.md:12
+# da218fda29544532b12be50dead6e2d0
+#: ../../contributing/features.md:10 4353fa79f6c248b28253215f5be80dba
+msgid ""
+"Discuss with the maintainers whether the addition makes sense in one of "
+"the core stacks, as a recipe in the documentation, as a community stack, "
+"or as something else entirely."
+msgstr ""
+
+# 26fa58bfa79f4fe7b7d0294f9f4f934a
+#: ../../contributing/features.md:12 b04c1c8e06ec44828bd20ebc60f600ca
 msgid "Selection Criteria"
-msgstr "Selection Criteria"
-
-# 981cef217f4e4225984c5c7989f592f8
-#: ../../contributing/features.md:14
-msgid ""
-"Roughly speaking, we evaluate new features based on the following criteria:"
 msgstr ""
-"Roughly speaking, we evaluate new features based on the following criteria:"
 
-# 32194c09119e428a871acb859d696500
-#: ../../contributing/features.md:16
+# ca139cf0df684011bdf6f6f68e151796
+#: ../../contributing/features.md:14 99dcda76706341fa9a660313b694487b
+msgid ""
+"Roughly speaking, we evaluate new features based on the following "
+"criteria:"
+msgstr ""
+
+# 55d41192f6bd4592aa15bf2fca333e4a
+#: ../../contributing/features.md:16 39d4caf9418a46e1aaad74d8ef18302b
 msgid ""
 "Usefulness to Jupyter users: Is the feature generally applicable across "
-"domains? Does it work with Jupyter Notebook, JupyterLab, JupyterHub, etc.?"
+"domains? Does it work with Jupyter Notebook, JupyterLab, JupyterHub, "
+"etc.?"
 msgstr ""
-"Usefulness to Jupyter users: Is the feature generally applicable across "
-"domains? Does it work with Jupyter Notebook, JupyterLab, JupyterHub, etc.?"
 
-# 7b5acf7ef5854ac4b2c55b1a51464796
-#: ../../contributing/features.md:17
+# 97f3898d0a1a4ff8afa82de9d30775bc
+#: ../../contributing/features.md:17 64584e1cd40c4985ba6bd7a3d4515451
 msgid ""
-"Fit with the image purpose: Does the feature match the theme of the stack in"
-" which it will be added? Would it fit better in a new, community stack?"
+"Fit with the image purpose: Does the feature match the theme of the stack"
+" in which it will be added? Would it fit better in a new, community "
+"stack?"
 msgstr ""
-"Fit with the image purpose: Does the feature match the theme of the stack in"
-" which it will be added? Would it fit better in a new, community stack?"
 
-# 55d1f51c3b264dcfb252771c83d8ca36
-#: ../../contributing/features.md:18
+# b4ac38d7ada6485da90e64186d54dc57
+#: ../../contributing/features.md:18 ebf29ca390fd4efbbe499c1751893688
 msgid ""
-"Complexity of build / runtime configuration: How many lines of code does the"
-" feature require in one of the Dockerfiles or startup scripts? Does it "
-"require new scripts entirely? Do users need to adjust how they use the "
+"Complexity of build / runtime configuration: How many lines of code does "
+"the feature require in one of the Dockerfiles or startup scripts? Does it"
+" require new scripts entirely? Do users need to adjust how they use the "
 "images?"
 msgstr ""
-"Complexity of build / runtime configuration: How many lines of code does the"
-" feature require in one of the Dockerfiles or startup scripts? Does it "
-"require new scripts entirely? Do users need to adjust how they use the "
-"images?"
 
-# 2a332f3b95064b43a1833166fd84f53c
-#: ../../contributing/features.md:19
+# 811968d07486412bbe8d9533a429e347
+#: ../../contributing/features.md:19 b868148943bc45fea8f76f78e5e8b62b
 msgid ""
 "Impact on image metrics: How many bytes does the feature and its "
-"dependencies add to the image(s)? How many minutes do they add to the build "
-"time?"
+"dependencies add to the image(s)? How many minutes do they add to the "
+"build time?"
 msgstr ""
-"Impact on image metrics: How many bytes does the feature and its "
-"dependencies add to the image(s)? How many minutes do they add to the build "
-"time?"
 
-# 30966a8cde0844bd85f6114c65f79ec4
-#: ../../contributing/features.md:20
+# 48f6c6506d504118972db4cc965ad54b
+#: ../../contributing/features.md:20 09a726a869b04f1db288a4acec35ae4a
 msgid ""
 "Ability to support the addition: Can existing maintainers answer user "
-"questions and address future build issues? Are the contributors interested "
-"in helping with long-term maintenance? Can we write tests to ensure the "
-"feature continues to work over time?"
+"questions and address future build issues? Are the contributors "
+"interested in helping with long-term maintenance? Can we write tests to "
+"ensure the feature continues to work over time?"
 msgstr ""
-"Ability to support the addition: Can existing maintainers answer user "
-"questions and address future build issues? Are the contributors interested "
-"in helping with long-term maintenance? Can we write tests to ensure the "
-"feature continues to work over time?"
 
-# 6085a8c0829e411588a37777bfe5e0f4
-#: ../../contributing/features.md:22
+# 813c0aa67a644056b5ca9b474f2edd94
+#: ../../contributing/features.md:22 8a7ebd6c67a54a2bb65113c89cba4e41
 msgid "Submitting a Pull Request"
-msgstr "Submitting a Pull Request"
+msgstr ""
 
-# fa5dc8dbaedb483b888622cc9d1e94ae
-#: ../../contributing/features.md:24
+# f7ca9b40be90476eb97c8fcd67205e9d
+#: ../../contributing/features.md:24 8d28c9aa02c84fcfa4eda05d1ca8072a
 msgid ""
 "If there's agreement that the feature belongs in one or more of the core "
 "stacks:"
 msgstr ""
-"If there's agreement that the feature belongs in one or more of the core "
-"stacks:"
 
-# 23ae2ae62bdb4a35bc42d9efc7759944
-#: ../../contributing/features.md:26
+# 090e533a7c02452587ee9ae774ffab49
+#: ../../contributing/features.md:26 577e53ffe59b4aeea991c60c2f4ff3cb
 msgid ""
-"Implement the feature in a local clone of the jupyter/docker-stacks project."
+"Implement the feature in a local clone of the jupyter/docker-stacks "
+"project."
 msgstr ""
-"Implement the feature in a local clone of the jupyter/docker-stacks project."
 
-# ef476261493c48d998fb384d651b4012
-#: ../../contributing/features.md:27
+# 1532dda80ffb43ffb1617fe628c00809
+#: ../../contributing/features.md:27 b8c9abc394df4b6ebcbc79f0890099b4
 msgid ""
-"Please build the image locally before submitting a pull request. Building "
-"the image locally shortens the debugging cycle by taking some load off "
+"Please build the image locally before submitting a pull request. Building"
+" the image locally shortens the debugging cycle by taking some load off "
 "Travis CI, which graciously provides free build services for open source "
 "projects like this one.  If you use make, call:"
 msgstr ""
-"Please build the image locally before submitting a pull request. Building "
-"the image locally shortens the debugging cycle by taking some load off "
-"Travis CI, which graciously provides free build services for open source "
-"projects like this one.  If you use make, call:"
 
-# 6bd20fd181f44e39a4913154db0c7221
-# 4277e486510d49a08448d209a5cdad69
-# f8c596a67a4f43c1a1c82a0f38a846f7
+# f054869250084c329c5c24debe355d38
+# bde1ad63b1e04dae9a965862b0146dd9
+# 7cbd48f6b3684c5997ac862300c43899
 #: ../../contributing/features.md:31 ../../contributing/packages.md:13
-#: ../../contributing/tests.md:20
+#: ../../contributing/tests.md:20 9627f48ac3434b898a2fcb523e2f575f
+#: a9f9d8ff4905466581b79c465a6dddaf ec4f745dbfd747e1a22219145f7e44df
 msgid "Submit a pull request (PR) with your changes."
-msgstr "Submit a pull request (PR) with your changes."
+msgstr ""
 
-# a7aa4a8d9d3d44eda2f1cf757e569c4e
-# d8f1d1f00b2a4e9690b4e0da736ac662
-# e4f93545f2284342a2b3ad1f52eaf26c
+# fa69df66887f47d9a9abcd75fa8a8497
+# 7083b6579dca40a487ab6bd7a21e20eb
+# 2fbcbd3f9a63431294360d65dac1734a
 #: ../../contributing/features.md:32 ../../contributing/packages.md:14
-#: ../../contributing/tests.md:21
+#: ../../contributing/tests.md:21 0117d3f00552447aa67dd6a3edc7f370
+#: 9efc22a27f584d3b9dc835d536227682 a2f16c356d2d4a31992ffd57aaf0b4a4
 msgid ""
-"Watch for Travis to report a build success or failure for your PR on GitHub."
+"Watch for Travis to report a build success or failure for your PR on "
+"GitHub."
 msgstr ""
-"Watch for Travis to report a build success or failure for your PR on GitHub."
 
-# f80657a299424b8685d452d70479bae6
-#: ../../contributing/features.md:33
+# b6f9117aeb68454aa8a7abca30656eaa
+#: ../../contributing/features.md:33 39a23dcd4390445488d6c064b16f2ecb
 msgid "Discuss changes with the maintainers and address any build issues."
-msgstr "Discuss changes with the maintainers and address any build issues."
+msgstr ""
 
-# 57ead3e81b9b4ebaa7a3491818f60089
-#: ../../contributing/issues.md:1
+# 42d6a0e44b104e1dbb87efffd722f75f
+#: ../../contributing/issues.md:1 091820a344d442caac7141d8d1f6107f
 msgid "Project Issues"
-msgstr "Project Issues"
-
-# f27080bf0c8d43a08f283b3c5e28ddc7
-#: ../../contributing/issues.md:3
-msgid ""
-"We appreciate your taking the time to report an issue you encountered using "
-"the Jupyter Docker Stacks. Please review the following guidelines when "
-"reporting your problem."
 msgstr ""
-"We appreciate your taking the time to report an issue you encountered using "
-"the Jupyter Docker Stacks. Please review the following guidelines when "
-"reporting your problem."
 
-# 3713984479614d4aa9237328bc2e233b
-#: ../../contributing/issues.md:7
+# 9c2a6e9f67354e86aca23758676fca43
+#: ../../contributing/issues.md:3 ae050c2dec014a3d8053584c283ab40c
 msgid ""
-"If you believe you’ve found a security vulnerability in any of the Jupyter "
-"projects included in Jupyter Docker Stacks images, please report it to "
-"security@ipython.org, not in the issue trackers on GitHub. If you prefer to "
-"encrypt your security reports, you can use this PGP public key."
+"We appreciate your taking the time to report an issue you encountered "
+"using the Jupyter Docker Stacks. Please review the following guidelines "
+"when reporting your problem."
 msgstr ""
-"If you believe you’ve found a security vulnerability in any of the Jupyter "
-"projects included in Jupyter Docker Stacks images, please report it to "
-"security@ipython.org, not in the issue trackers on GitHub. If you prefer to "
-"encrypt your security reports, you can use this PGP public key."
 
-# 0c7fad6ee9304bbe80baf1737d0f478c
-#: ../../contributing/issues.md:13
+# 6a629d63e2df4d63a6d46b008639cc37
+#: ../../contributing/issues.md:7 3b3dfd9b501d4844a8895ad365e39415
+msgid ""
+"If you believe you’ve found a security vulnerability in any of the "
+"Jupyter projects included in Jupyter Docker Stacks images, please report "
+"it to security@ipython.org, not in the issue trackers on GitHub. If you "
+"prefer to encrypt your security reports, you can use this PGP public key."
+msgstr ""
+
+# 530d75c287e542b194e6e6d1f2982ea7
+#: ../../contributing/issues.md:13 d33e530cddbe4864a81ad04401840724
 msgid ""
 "If you think your problem is unique to the Jupyter Docker Stacks images, "
-"please search the jupyter/docker-stacks issue tracker to see if someone else"
-" has already reported the same problem. If not, please open a new issue and "
-"provide all of the information requested in the issue template."
+"please search the jupyter/docker-stacks issue tracker to see if someone "
+"else has already reported the same problem. If not, please open a new "
+"issue and provide all of the information requested in the issue template."
 msgstr ""
-"If you think your problem is unique to the Jupyter Docker Stacks images, "
-"please search the jupyter/docker-stacks issue tracker to see if someone else"
-" has already reported the same problem. If not, please open a new issue and "
-"provide all of the information requested in the issue template."
 
-# 70860cacf75b40a687363712f3bf00ce
-#: ../../contributing/issues.md:19
+# 69a18cc239b34b94800599bf185f58d6
+#: ../../contributing/issues.md:19 30419019767746c4ac527eeaa5b48877
 msgid ""
-"If the issue you're seeing is with one of the open source libraries included"
-" in the Docker images and is reproducible outside the images, please file a "
-"bug with the appropriate open source project."
+"If the issue you're seeing is with one of the open source libraries "
+"included in the Docker images and is reproducible outside the images, "
+"please file a bug with the appropriate open source project."
 msgstr ""
-"If the issue you're seeing is with one of the open source libraries included"
-" in the Docker images and is reproducible outside the images, please file a "
-"bug with the appropriate open source project."
 
-# 76822159e56f40f3bb38ea93e054238c
-#: ../../contributing/issues.md:22
+# d60d9c017ea7411499fc4b8844685e8a
+#: ../../contributing/issues.md:22 442a446e51764f4aaf9975fcc23738e2
 msgid ""
-"If you have a general question about how to use the Jupyter Docker Stacks in"
-" your environment, in conjunction with other tools, with customizations, and"
-" so on, please post your question on the Jupyter Discourse site."
+"If you have a general question about how to use the Jupyter Docker Stacks"
+" in your environment, in conjunction with other tools, with "
+"customizations, and so on, please post your question on the Jupyter "
+"Discourse site."
 msgstr ""
-"If you have a general question about how to use the Jupyter Docker Stacks in"
-" your environment, in conjunction with other tools, with customizations, and"
-" so on, please post your question on the Jupyter Discourse site."
 
-# 3815aec9c791444cbdf26a71e28a1f7c
-#: ../../contributing/packages.md:1
+# 92d4aa6314a14654a1bfb74f8768cff7
+#: ../../contributing/packages.md:1 bb656ac606704cbea8c72082b267aabf
 msgid "Package Updates"
-msgstr "Package Updates"
-
-# 0bc1f6af65c74cc5a812a14b9c5a055f
-#: ../../contributing/packages.md:3
-msgid ""
-"We actively seek pull requests which update packages already included in the"
-" project Dockerfiles. This is a great way for first-time contributors to "
-"participate in developing the Jupyter Docker Stacks."
 msgstr ""
-"We actively seek pull requests which update packages already included in the"
-" project Dockerfiles. This is a great way for first-time contributors to "
-"participate in developing the Jupyter Docker Stacks."
 
-# ff8faef49758489fb97ddaba60763a0e
-#: ../../contributing/packages.md:5
+# 5f269a667f9a4c3ca342cfb49ecaefb2
+#: ../../contributing/packages.md:3 c56f5be912e84ab59f5948bc6bbba573
+msgid ""
+"We actively seek pull requests which update packages already included in "
+"the project Dockerfiles. This is a great way for first-time contributors "
+"to participate in developing the Jupyter Docker Stacks."
+msgstr ""
+
+# 30d4a79bce8d439d97e6e3555a088548
+#: ../../contributing/packages.md:5 7cc6a37a2d8e435ea219cc37c7eafae8
 msgid "Please follow the process below to update a package version:"
-msgstr "Please follow the process below to update a package version:"
-
-# e3878a1a1a444bb592fe32f468693ed7
-#: ../../contributing/packages.md:7
-msgid ""
-"Locate the Dockerfile containing the library you wish to update (e.g., base-"
-"notebook/Dockerfile, scipy-notebook/Dockerfile)"
 msgstr ""
-"Locate the Dockerfile containing the library you wish to update (e.g., base-"
-"notebook/Dockerfile, scipy-notebook/Dockerfile)"
 
-# d5aac81ecab24592860296ab74936724
-#: ../../contributing/packages.md:8
+# ba2bf1a38d6d4e42b9cb01d0aceb569f
+#: ../../contributing/packages.md:7 5fc9726fd09a42888260580dd99a6c57
 msgid ""
-"Adjust the version number for the package. We prefer to pin the major and "
-"minor version number of packages so as to minimize rebuild side-effects when"
-" users submit pull requests (PRs). For example, you'll find the Jupyter "
-"Notebook package, notebook, installed using conda with notebook=5.4.*."
+"Locate the Dockerfile containing the library you wish to update (e.g., "
+"base-notebook/Dockerfile, scipy-notebook/Dockerfile)"
 msgstr ""
-"Adjust the version number for the package. We prefer to pin the major and "
-"minor version number of packages so as to minimize rebuild side-effects when"
-" users submit pull requests (PRs). For example, you'll find the Jupyter "
-"Notebook package, notebook, installed using conda with notebook=5.4.*."
 
-# 0eed3a80d95146bab769d4456addcce4
-#: ../../contributing/packages.md:9
+# 837f2edd02f340a7b903654a976afd34
+#: ../../contributing/packages.md:8 495a20f4a49348f799c2a7dd1f6f6dd2
 msgid ""
-"Please build the image locally before submitting a pull request. Building "
-"the image locally shortens the debugging cycle by taking some load off "
+"Adjust the version number for the package. We prefer to pin the major and"
+" minor version number of packages so as to minimize rebuild side-effects "
+"when users submit pull requests (PRs). For example, you'll find the "
+"Jupyter Notebook package, notebook, installed using conda with "
+"notebook=5.4.*."
+msgstr ""
+
+# f81a7974c2ea4016b2ba58da4c04be68
+#: ../../contributing/packages.md:9 b08fb45bbfb14f28a654625c9f0c5804
+msgid ""
+"Please build the image locally before submitting a pull request. Building"
+" the image locally shortens the debugging cycle by taking some load off "
 "Travis CI, which graciously provides free build services for open source "
 "projects like this one. If you use make, call:"
 msgstr ""
-"Please build the image locally before submitting a pull request. Building "
-"the image locally shortens the debugging cycle by taking some load off "
-"Travis CI, which graciously provides free build services for open source "
-"projects like this one. If you use make, call:"
 
-# 1be104e942024f2b98eb10e0006b9de3
-#: ../../contributing/packages.md:15
+# 2fb7c7978a604dc9a758890e633913f3
+#: ../../contributing/packages.md:15 fa99676116624076b937f8c9e2c42535
 msgid ""
-"Discuss changes with the maintainers and address any build issues. Version "
-"conflicts are the most common problem. You may need to upgrade additional "
-"packages to fix build failures."
+"Discuss changes with the maintainers and address any build issues. "
+"Version conflicts are the most common problem. You may need to upgrade "
+"additional packages to fix build failures."
 msgstr ""
-"Discuss changes with the maintainers and address any build issues. Version "
-"conflicts are the most common problem. You may need to upgrade additional "
-"packages to fix build failures."
 
-# adf5db8b690d466a8d339c756a5a153c
-#: ../../contributing/recipes.md:1
+#: ../../contributing/packages.md:17 ae746c815337481a9045060c31245792
+msgid "Notes"
+msgstr ""
+
+#: ../../contributing/packages.md:19 9e720491970f40d08c74b5e5b7a0bd67
+msgid ""
+"In order to help identifying packages that can be updated you can use the"
+" following helper tool. It will list all the packages installed in the "
+"Dockerfile that can be updated -- dependencies are filtered to focus only"
+" on requested packages."
+msgstr ""
+
+# 8df94bc571bb4beabe013aab3de18311
+#: ../../contributing/recipes.md:1 8322817415e74ee5934eefe88cba5cb9
 msgid "New Recipes"
-msgstr "New Recipes"
-
-# 7d306f8fe4a641e4a48b61111c16b8e8
-#: ../../contributing/recipes.md:3
-msgid ""
-"We welcome contributions of recipes, short examples of using, configuring, "
-"or extending the Docker Stacks, for inclusion in the documentation site. "
-"Follow the process below to add a new recipe:"
 msgstr ""
-"We welcome contributions of recipes, short examples of using, configuring, "
-"or extending the Docker Stacks, for inclusion in the documentation site. "
-"Follow the process below to add a new recipe:"
 
-# 5b84ed1b594845ec81f39b87e7c5d82b
-#: ../../contributing/recipes.md:5
+# 8c8691f0a2734bc78005b61f4b0ab06b
+#: ../../contributing/recipes.md:3 d4b144adefa7426199f45d41ba4a6d73
+msgid ""
+"We welcome contributions of recipes, short examples of using, "
+"configuring, or extending the Docker Stacks, for inclusion in the "
+"documentation site. Follow the process below to add a new recipe:"
+msgstr ""
+
+# f5d1aba922b64f9783587c8f1d774c61
+#: ../../contributing/recipes.md:5 11e8f45aebc947b6803ad6aca36cb5e5
 msgid "Open the docs/using/recipes.md source file."
-msgstr "Open the docs/using/recipes.md source file."
-
-# 52f2b459bff447fe82c60ea02c4e751c
-#: ../../contributing/recipes.md:6
-msgid ""
-"Add a second-level Markdown heading naming your recipe at the bottom of the "
-"file (e.g., `## Add the RISE extension``)"
 msgstr ""
-"Add a second-level Markdown heading naming your recipe at the bottom of the "
-"file (e.g., `## Add the RISE extension``)"
 
-# 56b4b4356d3e45f5bbe6eb14f9540628
-#: ../../contributing/recipes.md:7
+# 131d0a36cdf64d50b2fa88a9f6aa3db7
+#: ../../contributing/recipes.md:6 928e3ffa8e204cf58ac9a5f8779243fe
 msgid ""
-"Write the body of your recipe under the heading, including whatever command "
-"line, Dockerfile, links, etc. you need."
+"Add a second-level Markdown heading naming your recipe at the bottom of "
+"the file (e.g., ## Add the RISE extension)"
 msgstr ""
-"Write the body of your recipe under the heading, including whatever command "
-"line, Dockerfile, links, etc. you need."
 
-# 6a3115ec07cf42a28c755a607658f855
-# f4f9a3d6544b4e4087e97124098459eb
+# 8838b0ff2be24c23afaca9a6f43a9b66
+#: ../../contributing/recipes.md:7 37409b77ced446349bca3b909fb7ad40
+msgid ""
+"Write the body of your recipe under the heading, including whatever "
+"command line, Dockerfile, links, etc. you need."
+msgstr ""
+
+# 31dad868af94494b91992050c12ec1d7
+# ee54777f272048c4919f263f299c5104
 #: ../../contributing/recipes.md:8 ../../contributing/stacks.md:111
+#: de8b5dc710a7482e89be10196edc4007 f9579a7bb7b04fd69e517dfa0c3c37e9
 msgid ""
-"Submit a pull request (PR) with your changes. Maintainers will respond and "
-"work with you to address any formatting or content issues."
+"Submit a pull request (PR) with your changes. Maintainers will respond "
+"and work with you to address any formatting or content issues."
 msgstr ""
-"Submit a pull request (PR) with your changes. Maintainers will respond and "
-"work with you to address any formatting or content issues."
 
-# 0b8332c390304a1ab29a4b2b030e7997
-#: ../../contributing/stacks.md:1
+# 27c1019878c14639a9f4b418195821fc
+#: ../../contributing/stacks.md:1 71e4ab0fbf89479da63745b1397bc9d7
 msgid "Community Stacks"
-msgstr "Community Stacks"
+msgstr ""
 
-# 69ee7d697c7240b78ea8c7873fc1528b
-#: ../../contributing/stacks.md:3
+# 5e68ee416aa841b1a7cbb957b0180bea
+#: ../../contributing/stacks.md:3 447694406f224f1bbb0ab0a79578b60d
 msgid ""
 "We love to see the community create and share new Jupyter Docker images. "
 "We've put together a cookiecutter project and the documentation below to "
 "help you get started defining, building, and sharing your Jupyter "
 "environments in Docker. Following these steps will:"
 msgstr ""
-"We love to see the community create and share new Jupyter Docker images. "
-"We've put together a cookiecutter project and the documentation below to "
-"help you get started defining, building, and sharing your Jupyter "
-"environments in Docker. Following these steps will:"
 
-# 0f392d5680ba4ea2812ff450f8e19d44
-#: ../../contributing/stacks.md:5
+# f0bac1d3b53d406896f6d63c93612805
+#: ../../contributing/stacks.md:5 9d642d375d95414c879c3cf4ae802d72
 msgid ""
 "Setup a project on GitHub containing a Dockerfile based on either the "
 "jupyter/base-notebook or jupyter/minimal-notebook image."
 msgstr ""
-"Setup a project on GitHub containing a Dockerfile based on either the "
-"jupyter/base-notebook or jupyter/minimal-notebook image."
 
-# c05df9d2cf8c4505b0951f0ea88f1daf
-#: ../../contributing/stacks.md:6
+# 8fa22b86dc9f4750b0b903371f16c1e6
+#: ../../contributing/stacks.md:6 be74dc9c920e4a37a369f2110e20e5c5
 msgid ""
 "Configure Travis CI to build and test your image when users submit pull "
 "requests to your repository."
 msgstr ""
-"Configure Travis CI to build and test your image when users submit pull "
-"requests to your repository."
 
-# 077482de9feb4fa2b1e5e477fd5591f1
-#: ../../contributing/stacks.md:7
-msgid ""
-"Configure Docker Cloud to build and host your images for others to use."
+# cb04d6b8877b47e78277b7025f642ae3
+#: ../../contributing/stacks.md:7 37eaf71b52ed43838e9837db7586287d
+msgid "Configure Docker Cloud to build and host your images for others to use."
 msgstr ""
-"Configure Docker Cloud to build and host your images for others to use."
 
-# e2fe70e1ea6e4322a8dfa4380f8e54bb
-#: ../../contributing/stacks.md:8
+# 2663c2d034934a7b81d81845288eb18c
+#: ../../contributing/stacks.md:8 9d574f00a921483187f31c64991c2a1e
 msgid ""
-"Update the list of community stacks in this documentation to include your "
-"image."
+"Update the list of community stacks in this documentation to include your"
+" image."
 msgstr ""
-"Update the list of community stacks in this documentation to include your "
-"image."
 
-# 3af1a3dc1eae4a7d96a883b911fc5894
-#: ../../contributing/stacks.md:10
+# 8e0fd1dc73cc40ceab19307d0cd809c1
+#: ../../contributing/stacks.md:10 06df1dbaf49447f584d9e0c8666ba6fe
 msgid ""
 "This approach mirrors how we build and share the core stack images. Feel "
-"free to follow it or pave your own path using alternative services and build"
-" tools."
+"free to follow it or pave your own path using alternative services and "
+"build tools."
 msgstr ""
-"This approach mirrors how we build and share the core stack images. Feel "
-"free to follow it or pave your own path using alternative services and build"
-" tools."
 
-# 0107f213096c41c8b1cb367b84fee30d
-#: ../../contributing/stacks.md:12
+# a959f079576b42e7aad7961aa18c711e
+#: ../../contributing/stacks.md:12 0751517fe8ef4cfd86fefcc10287bcfb
 msgid "Creating a Project"
-msgstr "Creating a Project"
+msgstr ""
 
-# cb35d196dc42402f9b338e56fcd3faa6
-#: ../../contributing/stacks.md:14
+# b531336cf1e44916934b6439c16e59d8
+#: ../../contributing/stacks.md:14 a8c40e93a229406eaf044edf7a28f1c2
 msgid "First, install cookiecutter using pip or conda:"
-msgstr "First, install cookiecutter using pip or conda:"
+msgstr ""
 
-# 09066f77e38c42889844dafb226df4bd
-#: ../../contributing/stacks.md:20
+# 02a8355204114fedbff0806aa1c0cfe7
+#: ../../contributing/stacks.md:20 92cb8156486d4436adf487885acc8de4
 msgid ""
 "Run the cookiecutter command pointing to the jupyter/cookiecutter-docker-"
 "stacks project on GitHub."
 msgstr ""
-"Run the cookiecutter command pointing to the jupyter/cookiecutter-docker-"
-"stacks project on GitHub."
 
-# 26f05981d3fe49abb07bba85a4a3890f
-#: ../../contributing/stacks.md:26
+# 676ff068156d4ca7b1043b4a4fe2d1f1
+#: ../../contributing/stacks.md:26 aa41b4ae2f44406fb095163de2a502ff
 msgid ""
 "Enter a name for your new stack image. This will serve as both the git "
 "repository name and the part of the Docker image name after the slash."
 msgstr ""
-"Enter a name for your new stack image. This will serve as both the git "
-"repository name and the part of the Docker image name after the slash."
 
-# c6aba910076b49ca97dcb902f13d2a4d
-#: ../../contributing/stacks.md:33
+# 96deffa98bab47da82e5598e549c8a39
+#: ../../contributing/stacks.md:33 ab23e4375d59491c901f4b473b7cffc7
 msgid ""
-"Enter the user or organization name under which this stack will reside on "
-"Docker Cloud / Hub. You must have access to manage this Docker Cloud org in "
-"order to push images here and setup automated builds."
+"Enter the user or organization name under which this stack will reside on"
+" Docker Cloud / Hub. You must have access to manage this Docker Cloud org"
+" in order to push images here and setup automated builds."
 msgstr ""
-"Enter the user or organization name under which this stack will reside on "
-"Docker Cloud / Hub. You must have access to manage this Docker Cloud org in "
-"order to push images here and setup automated builds."
 
-# 176a346034074822b7634c6c86dace42
-#: ../../contributing/stacks.md:41
+# b796c2d7c08b4a1db5cdfd3de7d84c16
+#: ../../contributing/stacks.md:41 89cc5fcd38024da19e832e3258095074
 msgid ""
-"Select an image from the jupyter/docker-stacks project that will serve as "
-"the base for your new image."
+"Select an image from the jupyter/docker-stacks project that will serve as"
+" the base for your new image."
 msgstr ""
-"Select an image from the jupyter/docker-stacks project that will serve as "
-"the base for your new image."
 
-# 3611e7452640414d9d0535292abd113d
-#: ../../contributing/stacks.md:48
+# 7ef9d73286d04b12a1350e8d9565df65
+#: ../../contributing/stacks.md:48 04a23f47dcd748e991d3d514ca015b14
 msgid "Enter a longer description of the stack for your README."
-msgstr "Enter a longer description of the stack for your README."
+msgstr ""
 
-# 782321361a3b4116a2d3dafa7cc1424f
-#: ../../contributing/stacks.md:54
+# 479d3a5c6ef9481a9dc4033224c540fa
+#: ../../contributing/stacks.md:54 f752aeec3ef344bcb75099a9fd25cbc7
 msgid "Initialize your project as a Git repository and push it to GitHub."
-msgstr "Initialize your project as a Git repository and push it to GitHub."
+msgstr ""
 
-# b699fe5155774c93938427a241d0f239
-#: ../../contributing/stacks.md:66
+# 6edd8157d77d472ca6d1306223c91777
+#: ../../contributing/stacks.md:66 d415912aa61249bbbe62fd7fa85ba579
 msgid "Configuring Travis"
-msgstr "Configuring Travis"
+msgstr ""
 
-# 6440a7c3a9444dda88445913807d1a48
-#: ../../contributing/stacks.md:68
+# 38e3784d96f64d7481f0e1fd17aff9cb
+#: ../../contributing/stacks.md:68 f1ead93a2b47493f8a901de8d40bdcc1
 msgid ""
 "Next, link your GitHub project to Travis CI to build your Docker image "
 "whenever you or someone else submits a pull request."
 msgstr ""
-"Next, link your GitHub project to Travis CI to build your Docker image "
-"whenever you or someone else submits a pull request."
 
-# c0613debece54f82a922700157994c5b
-#: ../../contributing/stacks.md:70
+# 2c032b71ddcb4495a9f609d9a35aedd7
+#: ../../contributing/stacks.md:70 1ad8cc92c82a47bd9363e50dfad85ef9
 msgid ""
-"Visit https://docs.travis-ci.com/user/getting-started/#To-get-started-with-"
-"Travis-CI and follow the instructions to add the Travis CI application to "
-"your GitHub account."
+"Visit https://docs.travis-ci.com/user/getting-started/#To-get-started-"
+"with-Travis-CI and follow the instructions to add the Travis CI "
+"application to your GitHub account."
 msgstr ""
-"Visit https://docs.travis-ci.com/user/getting-started/#To-get-started-with-"
-"Travis-CI and follow the instructions to add the Travis CI application to "
-"your GitHub account."
 
-# 4cf36f34a47b410a982be3237af720cd
-#: ../../contributing/stacks.md:71
+# 3bbb8357183241f7b5b82c7dd4b94b66
+#: ../../contributing/stacks.md:71 370062a2f81e4eefa1011f710afb3782
 msgid "Visit https://travis-ci.org."
-msgstr "Visit https://travis-ci.org."
+msgstr ""
 
-# fdd694f5ebf443ce9d2d220d5945c299
-#: ../../contributing/stacks.md:72
+# d6d51a4bd0a54432a6fdd835ff9064c5
+#: ../../contributing/stacks.md:72 fa1a0c9887094f3c828fdcedd9b54e76
 msgid "Click the + symbol at the top of the left sidebar."
-msgstr "Click the + symbol at the top of the left sidebar."
-
-# 05acff6addad4f919fe21c27329b1e51
-#: ../../contributing/stacks.md:74
-msgid ""
-"Locate your project repository either in your primary user account or in one"
-" of the organizations to which you belong."
 msgstr ""
-"Locate your project repository either in your primary user account or in one"
-" of the organizations to which you belong."
 
-# a1917b1360434fb18a3522e0a9806a11
-#: ../../contributing/stacks.md:75
+# ac370ece6fb24becb8034cb994ad8f4b
+#: ../../contributing/stacks.md:74 14c3591c93be48cea333a14a5e4341b6
+msgid ""
+"Locate your project repository either in your primary user account or in "
+"one of the organizations to which you belong."
+msgstr ""
+
+# 6b6a7bab547d4e25bd930009a6a9ea44
+#: ../../contributing/stacks.md:75 0287703061444469a42e5b3a30888766
 msgid "Click the toggle to enable builds for the project repository."
-msgstr "Click the toggle to enable builds for the project repository."
+msgstr ""
 
-# 7dcbafc96c4a4ef88d7bc34e31a0af04
-#: ../../contributing/stacks.md:76
+# 78e190712611492fade3d0c8ddded057
+#: ../../contributing/stacks.md:76 97fc9301188d45f5a5acfcd45949b11c
 msgid "Click the Settings button for that repository."
-msgstr "Click the Settings button for that repository."
-
-# dd006e53f5cc4c1ea1501d62119f526e
-#: ../../contributing/stacks.md:78
-msgid ""
-"Enable Build only if .travis.yml is present and Build pushed pull requests."
 msgstr ""
-"Enable Build only if .travis.yml is present and Build pushed pull requests."
 
-# 0a5e54cd5f294a52983c2ec73559f810
-#: ../../contributing/stacks.md:80
+# f8f7e84ec3754ea6b3641002d4ef764a
+#: ../../contributing/stacks.md:78 49747b86e49c4984b28816e30f7008c1
+msgid ""
+"Enable Build only if .travis.yml is present and Build pushed pull "
+"requests."
+msgstr ""
+
+# 03ef310b054e4a60aaa09b3b1b14f94c
+#: ../../contributing/stacks.md:80 40a3841b29df451a8390b70682ccb164
 msgid "Disable Build pushed branches."
-msgstr "Disable Build pushed branches."
+msgstr ""
 
-# 2ddf5289794648a3b7d1f604ce744331
-#: ../../contributing/stacks.md:82
+# 26ed9349e73f4a65b8195acfcada213b
+#: ../../contributing/stacks.md:82 3389802579c7432983c831861926770c
 msgid "Configuring Docker Cloud"
-msgstr "Configuring Docker Cloud"
-
-# 5108ce3f722a430eb29e1a5928a86fcf
-#: ../../contributing/stacks.md:84
-msgid ""
-"Now, configure Docker Cloud to build your stack image and push it to Docker "
-"Hub repository whenever you merge a GitHub pull request to the master branch"
-" of your project."
 msgstr ""
-"Now, configure Docker Cloud to build your stack image and push it to Docker "
-"Hub repository whenever you merge a GitHub pull request to the master branch"
-" of your project."
 
-# 7ab258ec2f1e4942a983996a6c5e6fa5
-#: ../../contributing/stacks.md:86
+# f0c01a2906494d039d73324e90cbae44
+#: ../../contributing/stacks.md:84 6f6d89f08e4c48e6b535053388479df6
+msgid ""
+"Now, configure Docker Cloud to build your stack image and push it to "
+"Docker Hub repository whenever you merge a GitHub pull request to the "
+"master branch of your project."
+msgstr ""
+
+# 67de7e2035dc4a329091875f97fb0ee4
+#: ../../contributing/stacks.md:86 6163be69d26f4488923543e6fd42d8b1
 msgid "Visit https://cloud.docker.com/ and login."
-msgstr "Visit https://cloud.docker.com/ and login."
+msgstr ""
 
-# 3677166ebbc04b2aafc4f117e33f6bf5
-#: ../../contributing/stacks.md:87
+# f32a2dc2e1ec45b39867be18be6cbd79
+#: ../../contributing/stacks.md:87 a696734afde94ff58555e10eff886ad3
 msgid ""
 "Select the account or organization matching the one you entered when "
 "prompted with stack_org by the cookiecutter."
 msgstr ""
-"Select the account or organization matching the one you entered when "
-"prompted with stack_org by the cookiecutter."
 
-# 0997628fd41449c5b0598e7e1bf1f005
-#: ../../contributing/stacks.md:89
+# e6518d4caa3b418abf3ae0c90311dddf
+#: ../../contributing/stacks.md:89 ff2e6530a0cf404cb11451daf04efd35
 msgid "Scroll to the bottom of the page and click Create repository."
-msgstr "Scroll to the bottom of the page and click Create repository."
-
-# 8504105c95594c288fdd9066006757b0
-#: ../../contributing/stacks.md:90
-msgid ""
-"Enter the name of the image matching the one you entered when prompted with "
-"stack_name by the cookiecutter."
 msgstr ""
-"Enter the name of the image matching the one you entered when prompted with "
-"stack_name by the cookiecutter."
 
-# c92796a106c846f585c88fb5a015fa6d
-#: ../../contributing/stacks.md:92
+# 4763c352de32492c9a843574846adb59
+#: ../../contributing/stacks.md:90 38683c622e9d488c9ba669531b2a6485
+msgid ""
+"Enter the name of the image matching the one you entered when prompted "
+"with stack_name by the cookiecutter."
+msgstr ""
+
+# 79092e5007ba4bdead594a71e30cd58a
+#: ../../contributing/stacks.md:92 fc6b9ac9104947fd90a87a2f760f5cbe
 msgid "Enter a description for your image."
-msgstr "Enter a description for your image."
-
-# fba832c82f3042499563598365fedfd5
-#: ../../contributing/stacks.md:93
-msgid ""
-"Click GitHub under the Build Settings and follow the prompts to connect your"
-" account if it is not already connected."
 msgstr ""
-"Click GitHub under the Build Settings and follow the prompts to connect your"
-" account if it is not already connected."
 
-# bff3581410014975943ca77637142f14
-#: ../../contributing/stacks.md:94
+# 720800dc73ee497689251633489e09ff
+#: ../../contributing/stacks.md:93 51f5a4c5706d432dad1b2e4c82359ac7
+msgid ""
+"Click GitHub under the Build Settings and follow the prompts to connect "
+"your account if it is not already connected."
+msgstr ""
+
+# e085cfd6d7664d04bcd14ce89f24b75a
+#: ../../contributing/stacks.md:94 4506c472fa3142049326a2bedb3dd6e8
 msgid ""
 "Select the GitHub organization and repository containing your image "
 "definition from the dropdowns."
 msgstr ""
-"Select the GitHub organization and repository containing your image "
-"definition from the dropdowns."
 
-# 72cbc93bfe354e279e9384e7c95c801b
-#: ../../contributing/stacks.md:96
+# 700a2f14a3df44459dc7c4fb5627dff6
+#: ../../contributing/stacks.md:96 8776d1da84ae4ab9a7ac8fd45becb296
 msgid "Click the Create and Build button."
-msgstr "Click the Create and Build button."
+msgstr ""
 
-# bbb495328efd4fe7b339b7a7ffe908b0
-#: ../../contributing/stacks.md:98
+# 90bca72ef3f848c8bcd46aacc3362448
+#: ../../contributing/stacks.md:98 827a4804b98e465e9d8680a307e863e4
 msgid "Defining Your Image"
-msgstr "Defining Your Image"
-
-# 60052c2d1afc4a57baa59c1bf22d321c
-#: ../../contributing/stacks.md:100
-msgid ""
-"Make edits the Dockerfile in your project to add third-party libraries and "
-"configure Jupyter applications. Refer to the Dockerfiles for the core stacks"
-" (e.g., jupyter/datascience-notebook) to get a feel for what's possible and "
-"best practices."
 msgstr ""
-"Make edits the Dockerfile in your project to add third-party libraries and "
-"configure Jupyter applications. Refer to the Dockerfiles for the core stacks"
-" (e.g., jupyter/datascience-notebook) to get a feel for what's possible and "
-"best practices."
 
-# 0855b53115ae4b6780cc82c9389224cb
-#: ../../contributing/stacks.md:102
+# fa24b82e07b54a63bf24c3126d9c90b0
+#: ../../contributing/stacks.md:100 37e87d063e414bcb887877cc47de57ca
 msgid ""
-"Submit pull requests to your project repository on GitHub. Ensure your image"
-" builds properly on Travis before merging to master. Refer to Docker Cloud "
-"for builds of your master branch that you can docker pull."
+"Make edits the Dockerfile in your project to add third-party libraries "
+"and configure Jupyter applications. Refer to the Dockerfiles for the core"
+" stacks (e.g., jupyter/datascience-notebook) to get a feel for what's "
+"possible and best practices."
 msgstr ""
-"Submit pull requests to your project repository on GitHub. Ensure your image"
-" builds properly on Travis before merging to master. Refer to Docker Cloud "
-"for builds of your master branch that you can docker pull."
 
-# de4bcc6e0ac1468ea761c038661ca19f
-#: ../../contributing/stacks.md:104
+# 6fd6540df8a64d769f3f0734b976d12e
+#: ../../contributing/stacks.md:102 a6d4424b958f4e6ca977c9ca53c15994
+msgid ""
+"Submit pull requests to your project repository on GitHub. Ensure your "
+"image builds properly on Travis before merging to master. Refer to Docker"
+" Cloud for builds of your master branch that you can docker pull."
+msgstr ""
+
+# ac1f142f0d8745428be05d7ff3549c13
+#: ../../contributing/stacks.md:104 f81f1de833064292a556eb2e7c5b05f5
 msgid "Sharing Your Image"
-msgstr "Sharing Your Image"
-
-# a67495f9ae984a368364a698084f060e
-#: ../../contributing/stacks.md:106
-msgid ""
-"Finally, if you'd like to add a link to your project to this documentation "
-"site, please do the following:"
 msgstr ""
-"Finally, if you'd like to add a link to your project to this documentation "
-"site, please do the following:"
 
-# 7357ed96047e42e6ae9e4bf123a00bed
-#: ../../contributing/stacks.md:108
+# d8e9f1a37f4c4a72bb630e7a3b265b92
+#: ../../contributing/stacks.md:106 db48b653dd5c4cb1ae0b04efc443394d
+msgid ""
+"Finally, if you'd like to add a link to your project to this "
+"documentation site, please do the following:"
+msgstr ""
+
+# 200610af72b540c9896d206dd27623e8
+#: ../../contributing/stacks.md:108 372946172cee44fc9967dc23be41a8ba
 msgid "Clone ths jupyter/docker-stacks GitHub repository."
-msgstr "Clone ths jupyter/docker-stacks GitHub repository."
-
-# ee9284fe69244dcd8d44b25b8dc8b3a2
-#: ../../contributing/stacks.md:109
-msgid ""
-"Open the docs/using/selecting.md source file and locate the Community Stacks"
-" section."
 msgstr ""
-"Open the docs/using/selecting.md source file and locate the Community Stacks"
-" section."
 
-# aa0e41b99c354b5b88336489084e2006
-#: ../../contributing/stacks.md:110
+# 7316f6af4b6f44468a68c8890a419aee
+#: ../../contributing/stacks.md:109 ff90c066e6fa4259a5dc48b70645786a
+msgid ""
+"Open the docs/using/selecting.md source file and locate the Community "
+"Stacks section."
+msgstr ""
+
+# 9d37dfec6fba48e6966c254b476e1e81
+#: ../../contributing/stacks.md:110 58370e3fb1134e53891f83fe8a75be0b
 msgid ""
 "Add a bullet with a link to your project and a short description of what "
 "your Docker image contains."
 msgstr ""
-"Add a bullet with a link to your project and a short description of what "
-"your Docker image contains."
 
-# 0f652c5259d544b595e847365dfe843a
-#: ../../contributing/tests.md:1
+# 8d835a3452014d62a974286f209f84ce
+#: ../../contributing/tests.md:1 e5705f3800e14843bc47d5b3646671f1
 msgid "Image Tests"
-msgstr "Image Tests"
-
-# 569da0112572470b9bc5f045bcfb49d0
-#: ../../contributing/tests.md:3
-msgid ""
-"We greatly appreciate pull requests that extend the automated tests that vet"
-" the basic functionality of the Docker images."
 msgstr ""
-"We greatly appreciate pull requests that extend the automated tests that vet"
-" the basic functionality of the Docker images."
 
-# 67b27592447e47af8b0b00eeb745fc70
-#: ../../contributing/tests.md:5
+# 6dbd44985f3c4ba1a3823c90c5944ad0
+#: ../../contributing/tests.md:3 7e00406b75cc474eb3673119044a942b
+msgid ""
+"We greatly appreciate pull requests that extend the automated tests that "
+"vet the basic functionality of the Docker images."
+msgstr ""
+
+# 4642bf6f1d2649c381a13b97b7d29d42
+#: ../../contributing/tests.md:5 4e17831c853f4a308e05e2bb5ba9f7e9
 msgid "How the Tests Work"
-msgstr "How the Tests Work"
-
-# e2c3d76accff489eb2a6eab7b55ae3be
-#: ../../contributing/tests.md:7
-msgid ""
-"Travis executes make build-test-all against every pull request submitted to "
-"the jupyter/docker-stacks repository. The make command builds every docker "
-"image. After building each image, the make command executes pytest to run "
-"both image-specific tests like those in base-notebook/test/ and common tests"
-" defined in test/. Both kinds of tests make use of global pytest fixtures "
-"defined in the conftest.py file at the root of the projects."
 msgstr ""
-"Travis executes make build-test-all against every pull request submitted to "
-"the jupyter/docker-stacks repository. The make command builds every docker "
-"image. After building each image, the make command executes pytest to run "
-"both image-specific tests like those in base-notebook/test/ and common tests"
-" defined in test/. Both kinds of tests make use of global pytest fixtures "
-"defined in the conftest.py file at the root of the projects."
 
-# 15207b72b26741f0a6a77949a4d9d0f4
-#: ../../contributing/tests.md:9
+# 8cf4546daeba45a6abd2eb0cd7fc2b73
+#: ../../contributing/tests.md:7 174ba4331b7b435fb7516f71338e8cf0
+msgid ""
+"Travis executes make build-test-all against pull requests submitted to "
+"the jupyter/docker-stacks repository. This make command builds every "
+"docker image. After building each image, the make command executes pytest"
+" to run both image-specific tests like those in base-notebook/test/ and "
+"common tests defined in test/. Both kinds of tests make use of global "
+"pytest fixtures defined in the conftest.py file at the root of the "
+"projects."
+msgstr ""
+
+# 02fe04b413994b57af9c948cb25ce53d
+#: ../../contributing/tests.md:9 40733a57608646cfa46a6dbf4e734cfb
 msgid "Contributing New Tests"
-msgstr "Contributing New Tests"
+msgstr ""
 
-# 5470865e6d144e51a428221e49e448fb
-#: ../../contributing/tests.md:11
+# d317e6be0fbf487e8528ff1fe0bbdb78
+#: ../../contributing/tests.md:11 4f9a712ed43f40febaa8ebbff8a86d1a
 msgid "Please follow the process below to add new tests:"
-msgstr "Please follow the process below to add new tests:"
-
-# 36aedaa2624c4e4493af145bc5f246e0
-#: ../../contributing/tests.md:13
-msgid ""
-"If the test should run against every image built, add your test code to one "
-"of the modules in test/ or create a new module."
 msgstr ""
-"If the test should run against every image built, add your test code to one "
-"of the modules in test/ or create a new module."
 
-# dccbb0425be7438db7ade2f4892c6c25
-#: ../../contributing/tests.md:14
+# 5db827e3a1a34a7097fda2c23743116f
+#: ../../contributing/tests.md:13 9341dd93399d481b88a94f8ad590dfe8
 msgid ""
-"If your test should run against a single image, add your test code to one of"
-" the modules in some-notebook/test/ or create a new module."
+"If the test should run against every image built, add your test code to "
+"one of the modules in test/ or create a new module."
 msgstr ""
-"If your test should run against a single image, add your test code to one of"
-" the modules in some-notebook/test/ or create a new module."
 
-# 33ab248b51d24fa0b29923489bf6dfbf
-#: ../../contributing/tests.md:15
+# 58c90865c96f43138ec9089b67c7d5ba
+#: ../../contributing/tests.md:14 8cecad4246214037bb483a5dbe1c03b3
 msgid ""
-"Build one or more images you intend to test and run the tests locally. If "
-"you use make, call:"
+"If your test should run against a single image, add your test code to one"
+" of the modules in some-notebook/test/ or create a new module."
 msgstr ""
-"Build one or more images you intend to test and run the tests locally. If "
-"you use make, call:"
 
-# 0453d92037cb4e47a025bc9021bdc7db
-#: ../../contributing/tests.md:22
+# 332e0f9399a54ef4a488a7392a18a2a0
+#: ../../contributing/tests.md:15 803ece109073407f82b86e7a28c0f839
+msgid ""
+"Build one or more images you intend to test and run the tests locally. If"
+" you use make, call:"
+msgstr ""
+
+# 760abcc7be7744858eda5ee0b7be3107
+#: ../../contributing/tests.md:22 a256b164b9494443a4db78284fe1d5de
 msgid ""
 "Discuss changes with the maintainers and address any issues running the "
 "tests on Travis."
 msgstr ""
-"Discuss changes with the maintainers and address any issues running the "
-"tests on Travis."
+
+# 3bf94cce9dcd4567b7414c40d7db827c
+#: ../../contributing/translations.md:1 4fdfbe06402b48ae94e325dc7418e66d
+msgid "Doc Translations"
+msgstr ""
+
+# caa387c3e37b492fb588b5d54d9e092f
+#: ../../contributing/translations.md:3 cc099d33252c405ca4a8549a74b951e4
+msgid ""
+"We are delighted when members of the Jupyter community want to help "
+"translate these documentation pages to other languages. If you're "
+"interested, please visit links below below to join our team on Transifex "
+"and to start creating, reviewing, and updating translations of the "
+"Jupyter Docker Stacks documentation."
+msgstr ""
+
+# 78f5029763cc4c3f9c4132202f30b083
+#: ../../contributing/translations.md:5 7542cdc8d9aa4ec7b6ab903ca3490a24
+msgid "Follow the steps documented on the Getting Started as a Translator page."
+msgstr ""
+
+# 44a72a4bb6934e56b0e3d1eb78280d01
+#: ../../contributing/translations.md:6 c88d574876b94658b4b93090f0333206
+msgid ""
+"Look for jupyter-docker-stacks when prompted to choose a translation "
+"team. Alternatively, visit https://www.transifex.com/project-jupyter"
+"/jupyter-docker-stacks-1 after creating your account and request to join "
+"the project."
+msgstr ""
+
+# 24a937946b16417a8bfe6715ea9a9eea
+#: ../../contributing/translations.md:7 5d2f98a0e1424378a86d0a999a2c41bc
+msgid "See Translating with the Web Editor in the Transifex documentation."
+msgstr ""
+

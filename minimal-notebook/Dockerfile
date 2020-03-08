@@ -28,18 +28,18 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     lmodern \
     man \
     netcat \
-    pandoc \
     python-dev \
-    texlive-fonts-extra \
+    # ---- nbconvert dependencies ----
+    texlive-xetex \
     texlive-fonts-recommended \
     texlive-generic-recommended \
-    texlive-latex-base \
-    texlive-latex-extra \
-    texlive-xetex \
+    # Optional dependency
+    texlive-fonts-extra \
+    # ----
     tzdata \
     unzip \
     nano \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install the bash-kernel from https://github.com/takluyver/bash_kernel
 RUN pip install bash_kernel \

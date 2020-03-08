@@ -1,89 +1,80 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2018- Project Jupyter
-# This file is distributed under the same license as the docker-stacks package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+# This file is distributed under the same license as the docker-stacks
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: docker-stacks latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-21 17:25-0400\n"
+"POT-Creation-Date: 2019-09-02 01:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
 
-# cefae71d9a804ab69c7e9f0a53eb7475
+# 99bff7d6e014436daac99d7d6c9bccf0
 #: ../../maintaining/tasks.md:1
 msgid "Maintainer Playbook"
-msgstr "Maintainer Playbook"
+msgstr ""
 
-# af6a24b053794e55bddfe6e2e21ae74f
+# 2adfeb6f61a94194b4f2cac30ebd3215
 #: ../../maintaining/tasks.md:3
 msgid "Merging Pull Requests"
-msgstr "Merging Pull Requests"
+msgstr ""
 
-# c34b1d3b543346689adbca91331ac048
+# 0a04eb6c0525428984f07f3c249f5d73
 #: ../../maintaining/tasks.md:5
 msgid ""
 "To build new images on Docker Cloud and publish them to the Docker Hub "
 "registry, do the following:"
 msgstr ""
-"To build new images on Docker Cloud and publish them to the Docker Hub "
-"registry, do the following:"
 
-# 1597bb99448f41b994d1c7073b9c8721
+# f2710754a41e4354b51f4acd6f1f9545
 #: ../../maintaining/tasks.md:7
 msgid "Make sure Travis is green for a PR."
-msgstr "Make sure Travis is green for a PR."
+msgstr ""
 
-# 401ed2733771440e8ef089f54cf2984d
+# db74ca47dfde4e558a20aff52176347a
 #: ../../maintaining/tasks.md:8
 msgid "Merge the PR."
-msgstr "Merge the PR."
+msgstr ""
 
-# 6d0bf2e7538640a0989e56df3c9d1106
+# 87b2e059678349b38d0badc5404484ec
 #: ../../maintaining/tasks.md:9
 msgid ""
-"Monitor the Docker Cloud build status for each of the stacks, starting with "
-"jupyter/base-notebook and ending with jupyter/all-spark-notebook. See the "
-"stack hierarchy diagram for the current, complete build order."
+"Monitor the Docker Cloud build status for each of the stacks, starting "
+"with jupyter/base-notebook and ending with jupyter/all-spark-notebook. "
+"See the stack hierarchy diagram for the current, complete build order."
 msgstr ""
-"Monitor the Docker Cloud build status for each of the stacks, starting with "
-"jupyter/base-notebook and ending with jupyter/all-spark-notebook. See the "
-"stack hierarchy diagram for the current, complete build order."
 
-# 428124fa830d4c74a618d7b3c696599c
+# 9149cb3c2bdc48ffa9109b3b6ddcf446
 #: ../../maintaining/tasks.md:10
 msgid ""
-"Manually click the retry button next to any build that fails to resume that "
-"build and any dependent builds."
+"Manually click the retry button next to any build that fails to resume "
+"that build and any dependent builds."
 msgstr ""
-"Manually click the retry button next to any build that fails to resume that "
-"build and any dependent builds."
 
-# c4034a02dab8435f8d76c2d32321a262
+# d204ada7a14b46338be9b7afb0bc95b0
 #: ../../maintaining/tasks.md:11
 msgid ""
 "Try to avoid merging another PR to master until all outstanding builds "
 "complete. There's no way at present to propagate the git SHA to build "
-"through the Docker Cloud build trigger API. Every build trigger works off of"
-" master HEAD."
+"through the Docker Cloud build trigger API. Every build trigger works off"
+" of master HEAD."
 msgstr ""
-"Try to avoid merging another PR to master until all outstanding builds "
-"complete. There's no way at present to propagate the git SHA to build "
-"through the Docker Cloud build trigger API. Every build trigger works off of"
-" master HEAD."
 
-# 62ddd25e15064cea950f9f13a663dcdb
+# 9626663d7dc145979f6f75e7aaf7689f
 #: ../../maintaining/tasks.md:13
 msgid "Updating the Ubuntu Base Image"
-msgstr "Updating the Ubuntu Base Image"
+msgstr ""
 
-# 091b1ce707f44bc6ae9742cf55b92ebf
+# 6951ec7a2be24782bc2f814c5c02978a
 #: ../../maintaining/tasks.md:15
 msgid ""
 "When there's a security fix in the Ubuntu base image or after some time "
@@ -92,229 +83,295 @@ msgid ""
 "process. Expect the build to take a while to complete: every image layer "
 "will rebuild."
 msgstr ""
-"When there's a security fix in the Ubuntu base image or after some time "
-"passes, it's a good idea to update the pinned SHA in the jupyter/base-"
-"notebook Dockerfile. Submit it as a regular PR and go through the build "
-"process. Expect the build to take a while to complete: every image layer "
-"will rebuild."
 
-# d834495e774a4fee952324e4cc5ab514
+# 37576597a1524fabb0ef175abe29ee8a
 #: ../../maintaining/tasks.md:17
 msgid "Adding a New Core Image to Docker Cloud"
-msgstr "Adding a New Core Image to Docker Cloud"
+msgstr ""
 
-# b765140c2d1446849b747351532d6290
+# 201f0506bbb24b47b79a5db01db86557
 #: ../../maintaining/tasks.md:19
 msgid ""
-"When there's a new stack definition, do the following before merging the PR "
-"with the new stack:"
+"When there's a new stack definition, do the following before merging the "
+"PR with the new stack:"
 msgstr ""
-"When there's a new stack definition, do the following before merging the PR "
-"with the new stack:"
 
-# b7b25a83cd3246bd886926722c30ac1a
+# 5460275aca4848e297e80aa2d9d4f3ee
 #: ../../maintaining/tasks.md:21
 msgid ""
 "Ensure the PR includes an update to the stack overview diagram in the "
 "documentation. The image links to the blockdiag source used to create it."
 msgstr ""
-"Ensure the PR includes an update to the stack overview diagram in the "
-"documentation. The image links to the blockdiag source used to create it."
 
-# 50edc8e02aa9497d81dc312eafe5d2bf
+# 0e3d12dcfb4b42b8a3d24b9401caa757
 #: ../../maintaining/tasks.md:22
 msgid ""
 "Ensure the PR updates the Makefile which is used to build the stacks in "
 "order on Travis CI."
 msgstr ""
-"Ensure the PR updates the Makefile which is used to build the stacks in "
-"order on Travis CI."
 
-# fabcb32a80a04a639aebd8b55d38119e
+# 4175414ec7e94aab8ae15d02afff0580
 #: ../../maintaining/tasks.md:23
 msgid ""
-"Create a new repository in the jupyter org on Docker Cloud named after the "
-"stack folder in the git repo."
+"Create a new repository in the jupyter org on Docker Cloud named after "
+"the stack folder in the git repo."
 msgstr ""
-"Create a new repository in the jupyter org on Docker Cloud named after the "
-"stack folder in the git repo."
 
-# 1811dcec60e3433d94514eaeebecb44b
+# eb598362707c44adadac8890755936ef
 #: ../../maintaining/tasks.md:24
 msgid "Grant the stacks team permission to write to the repo."
-msgstr "Grant the stacks team permission to write to the repo."
+msgstr ""
 
-# afa7b1fcb0224380a111fe94f7781d60
+# 25076c59e0ec4dc28ee2c977d5977216
 #: ../../maintaining/tasks.md:25
 msgid "Click Builds and then Configure Automated Builds for the repository."
-msgstr "Click Builds and then Configure Automated Builds for the repository."
+msgstr ""
 
-# 35b969b9f7a442d99f54a73494033d90
+# 1e5483f6ca3542ea9d43923d8eacf53d
 #: ../../maintaining/tasks.md:26
 msgid "Select jupyter/docker-stacks as the source repository."
-msgstr "Select jupyter/docker-stacks as the source repository."
+msgstr ""
 
-# fe715af4446d409cb4d5ee81255bd86e
+# 157cc21e4a1a4bda80d6e3f8a37c29d7
 #: ../../maintaining/tasks.md:27
 msgid ""
-"Choose Build on Docker Cloud's infrastructure using a Small node unless you "
-"have reason to believe a bigger host is required."
+"Choose Build on Docker Cloud's infrastructure using a Small node unless "
+"you have reason to believe a bigger host is required."
 msgstr ""
-"Choose Build on Docker Cloud's infrastructure using a Small node unless you "
-"have reason to believe a bigger host is required."
 
-# dc41895431b64657b5e24a8c96779ca6
+# 36c9c49d610a4e32b024413ce1924f04
 #: ../../maintaining/tasks.md:28
 msgid ""
 "Update the Build Context in the default build rule to be /<name-of-the-"
 "stack>."
 msgstr ""
-"Update the Build Context in the default build rule to be /<name-of-the-"
-"stack>."
 
-# e4d220bf1cb54781bc03f16a17ddafb8
+# b98a150760924b36ad034180f6703f71
 #: ../../maintaining/tasks.md:29
 msgid ""
 "Toggle Autobuild to disabled unless the stack is a new root stack (e.g., "
 "like jupyter/base-notebook)."
 msgstr ""
-"Toggle Autobuild to disabled unless the stack is a new root stack (e.g., "
-"like jupyter/base-notebook)."
 
-# c5a459d038714ff78d4f156ee227d9ca
+# dd8eb743edb8447ca525286d44c47b11
 #: ../../maintaining/tasks.md:30
-msgid ""
-"If the new stack depends on the build of another stack in the hierarchy:"
+msgid "If the new stack depends on the build of another stack in the hierarchy:"
 msgstr ""
-"If the new stack depends on the build of another stack in the hierarchy:"
 
-# 611376c2ec6942479f60129177d312cc
+# a7dad3d094a242adadfa852c1437ec9f
 #: ../../maintaining/tasks.md:31
 msgid "Hit Save and then click Configure Automated Builds."
-msgstr "Hit Save and then click Configure Automated Builds."
+msgstr ""
 
-# 81cc56c63891432d89d4df3001f1bcde
+# bd94bcfffbc449ee85ffec18d13ba909
 #: ../../maintaining/tasks.md:32
 msgid "At the very bottom, add a build trigger named Stack hierarchy trigger."
 msgstr ""
-"At the very bottom, add a build trigger named Stack hierarchy trigger."
 
-# 9e55682a966a422c846a3463c7a30cfe
+# c1dc766b9b9f45e59510580c3e29017e
 #: ../../maintaining/tasks.md:33
 msgid "Copy the build trigger URL."
-msgstr "Copy the build trigger URL."
+msgstr ""
 
-# a9d853a1d45b4ead965813822a96c934
+# c47dc2c8c04f4af9bbb059692074d979
 #: ../../maintaining/tasks.md:34
 msgid ""
 "Visit the parent repository Builds page and click Configure Automated "
 "Builds."
 msgstr ""
-"Visit the parent repository Builds page and click Configure Automated "
-"Builds."
 
-# 327d4522c3884247871aa406bbe19402
+# 53ad6138cba343c4a2314cbdfefaa3de
 #: ../../maintaining/tasks.md:35
 msgid ""
-"Add the URL you copied to the NEXT_BUILD_TRIGGERS environment variable comma"
-" separated list of URLs, creating that environment variable if it does not "
-"already exist."
+"Add the URL you copied to the NEXT_BUILD_TRIGGERS environment variable "
+"comma separated list of URLs, creating that environment variable if it "
+"does not already exist."
 msgstr ""
-"Add the URL you copied to the NEXT_BUILD_TRIGGERS environment variable comma"
-" separated list of URLs, creating that environment variable if it does not "
-"already exist."
 
-# 1aa0e4b95ab847e0be8ac9647433c991
-# 7dfff62380a041968ee6e739b1ca271f
+# c1b65a945fb84b57929a970c00fe60e7
+# f235402e08104dcbac10aee2415b5aba
 #: ../../maintaining/tasks.md:36 ../../maintaining/tasks.md:40
 msgid "Hit Save."
-msgstr "Hit Save."
+msgstr ""
 
-# 8315ed043efb40238227f8be0ad61b52
+# c915beb1daef4cab989b00b571d30cbb
 #: ../../maintaining/tasks.md:37
 msgid "If the new stack should trigger other dependent builds:"
-msgstr "If the new stack should trigger other dependent builds:"
+msgstr ""
 
-# 6e0e15d05a544476b91794d10b8732ff
+# b19b3d4243a648ec9aaa46f038e29636
 #: ../../maintaining/tasks.md:38
 msgid "Add an environment variable named NEXT_BUILD_TRIGGERS."
-msgstr "Add an environment variable named NEXT_BUILD_TRIGGERS."
+msgstr ""
 
-# 9dc2029e6360433ab7181187f7040d48
+# 74dbcd642b774e46aa2d472161fe228f
 #: ../../maintaining/tasks.md:39
 msgid ""
 "Copy the build trigger URLs from the dependent builds into the "
 "NEXT_BUILD_TRIGGERS comma separated list of URLs."
 msgstr ""
-"Copy the build trigger URLs from the dependent builds into the "
-"NEXT_BUILD_TRIGGERS comma separated list of URLs."
 
-# 89165b279d9142e9b8e5d7a923fca2be
+# 3d39e5c5b33641d8ba202c4cedc33849
 #: ../../maintaining/tasks.md:41
 msgid ""
-"Adjust other NEXT_BUILD_TRIGGERS values as needed so that the build order "
-"matches that in the stack hierarchy diagram."
+"Adjust other NEXT_BUILD_TRIGGERS values as needed so that the build order"
+" matches that in the stack hierarchy diagram."
 msgstr ""
-"Adjust other NEXT_BUILD_TRIGGERS values as needed so that the build order "
-"matches that in the stack hierarchy diagram."
 
-# 51c8151943794bc8b1d51d65ccd84736
+# c15b6f77f0784056aa45c456e49673ff
 #: ../../maintaining/tasks.md:43
 msgid "Adding a New Maintainer Account"
-msgstr "Adding a New Maintainer Account"
+msgstr ""
 
-# 1994c19e7a734b2cad9af0afcd7da31e
+# e3bd3ced73994d9fad596784e1469cfc
 #: ../../maintaining/tasks.md:45
 msgid "Visit https://cloud.docker.com/app/jupyter/team/stacks/users"
-msgstr "Visit https://cloud.docker.com/app/jupyter/team/stacks/users"
+msgstr ""
 
-# 390ccdde528146bbbc3d2f62717a647c
+# 51b166c70ba743e0b4d335b3471da69a
 #: ../../maintaining/tasks.md:46
 msgid "Add the maintainer's Docker Cloud username."
-msgstr "Add the maintainer's Docker Cloud username."
+msgstr ""
 
-# b0227c37244c4b82848cc2655f134d21
+# 300f5dbd933f4ee6b5a550efd35f1c52
 #: ../../maintaining/tasks.md:47
 msgid ""
-"Visit https://github.com/orgs/jupyter/teams/docker-image-maintainers/members"
+"Visit https://github.com/orgs/jupyter/teams/docker-image-"
+"maintainers/members"
 msgstr ""
-"Visit https://github.com/orgs/jupyter/teams/docker-image-maintainers/members"
 
-# b0fdbdd14b1444d1b696d8367aa111fb
+# e26ad8ffb6de489988e076e64b6a1415
 #: ../../maintaining/tasks.md:48
 msgid "Add the maintainer's GitHub username."
-msgstr "Add the maintainer's GitHub username."
+msgstr ""
 
-# abe2cb04fcb9447496bf3bc9fb230cdc
+# 97362d55b4f340e6af93e7150d357906
 #: ../../maintaining/tasks.md:50
 msgid "Pushing a Build Manually"
-msgstr "Pushing a Build Manually"
+msgstr ""
 
-# 3ef85ec6ea0a4a84aecc2bc7e7a5a5fd
+# 050b5c7a3d9d46bcbe26d54e8585ddd8
 #: ../../maintaining/tasks.md:52
 msgid ""
-"If automated builds on Docker Cloud have got you down, do the following to "
-"push a build manually:"
+"If automated builds on Docker Cloud have got you down, do the following "
+"to push a build manually:"
 msgstr ""
-"If automated builds on Docker Cloud have got you down, do the following to "
-"push a build manually:"
 
-# 3ebef623fa2f46f49ef639ad17105d4a
+# ead6a3a714ae4a8a9df5585c18260c16
 #: ../../maintaining/tasks.md:54
 msgid "Clone this repository."
-msgstr "Clone this repository."
+msgstr ""
 
-# dcf8e9e8c72e40b9aa23c090311d6ea2
+# 48e1d6954f414fe080d7b4afd9e0c391
 #: ../../maintaining/tasks.md:55
 msgid "Check out the git SHA you want to build and publish."
-msgstr "Check out the git SHA you want to build and publish."
+msgstr ""
 
-# fe788ad30f694b1f9b013cabfa820343
+# 98f385aba16144acb355a7f8ceccbf65
 #: ../../maintaining/tasks.md:56
 msgid "docker login with your Docker Hub/Cloud credentials."
-msgstr "docker login with your Docker Hub/Cloud credentials."
+msgstr ""
 
-# 649dc474ffaa483eb625ed8061cb0097
+# 580040491fc14cef9ecf16b58128093e
 #: ../../maintaining/tasks.md:57
 msgid "Run make retry/release-all."
-msgstr "Run make retry/release-all."
+msgstr ""
+
+# bd3a5cebd1254827a53b9dba986e69fa
+#: ../../maintaining/tasks.md:59
+msgid "Enabling a New Doc Language Translation"
+msgstr ""
+
+# 5aafef10dc75417785a79aba203175e5
+#: ../../maintaining/tasks.md:61
+msgid "First enable translation on Transifex:"
+msgstr ""
+
+# c1a249c0d0cd4e9192ed7814dfde6e34
+#: ../../maintaining/tasks.md:63
+msgid ""
+"Visit https://www.transifex.com/project-jupyter/jupyter-docker-"
+"stacks-1/languages/"
+msgstr ""
+
+# 3675bff3644a4d928586f884e3bf2636
+#: ../../maintaining/tasks.md:64
+msgid "Click Edit Languages in the top right."
+msgstr ""
+
+# 7efe7d98a98b47bd82d697673d277cbd
+#: ../../maintaining/tasks.md:65
+msgid "Select the language from the dropdown."
+msgstr ""
+
+# 174f04a821b843dcace04f708cbf3c78
+#: ../../maintaining/tasks.md:66
+msgid "Click Apply."
+msgstr ""
+
+# 1e3868ee7dae469f9921516dd7973766
+#: ../../maintaining/tasks.md:68
+msgid "Then setup a subproject on ReadTheDocs for the language:"
+msgstr ""
+
+# fffa155a75674f0dbe746a15eb3be492
+#: ../../maintaining/tasks.md:70
+msgid "Visit https://readthedocs.org/dashboard/import/manual/"
+msgstr ""
+
+# 596b5f7d6f19482588e7f34f202526c5
+#: ../../maintaining/tasks.md:71
+msgid "Enter jupyter-docker-stacks-language_abbreviation for the project name."
+msgstr ""
+
+# 2869b2f7a89c428f903e3695dd511e9a
+#: ../../maintaining/tasks.md:72
+msgid "Enter https://github.com/jupyter/docker-stacks for the URL."
+msgstr ""
+
+# 4a964f7a3ec242b2bf03a8478f53b5d9
+#: ../../maintaining/tasks.md:73
+msgid "Check Edit advanced project options."
+msgstr ""
+
+# baf5be1aea37451dbdb266b5aa221453
+#: ../../maintaining/tasks.md:74
+msgid "Click Next."
+msgstr ""
+
+# 1f6b09025ce34dc1bef51a8ac114080a
+#: ../../maintaining/tasks.md:75
+msgid "Select the Language from the dropdown on the next screen."
+msgstr ""
+
+# 50c15b61ac8e4d1bbdd36681a25aa6ed
+#: ../../maintaining/tasks.md:76
+msgid "Click Finish."
+msgstr ""
+
+# 529f3729d2474287adec0ff895100248
+#: ../../maintaining/tasks.md:78
+msgid "Finally link the new language subproject to the top level doc project:"
+msgstr ""
+
+# 024aaf54695141839eaa5537b4087a81
+#: ../../maintaining/tasks.md:80
+msgid ""
+"Visit https://readthedocs.org/dashboard/jupyter-docker-"
+"stacks/translations/"
+msgstr ""
+
+# 6e5a75790d784cdaaa2cda5fac32b67e
+#: ../../maintaining/tasks.md:81
+msgid "Select the subproject you created from the Project dropdown."
+msgstr ""
+
+# 9367330f235441869d649687e97a1796
+#: ../../maintaining/tasks.md:82
+msgid "Click Add."
+msgstr ""
+
+# a798b8e31be7408d9301187ff3e3ef69
+#~ msgid "Enter jupyter-docker-stacks-<lang> for the project name."
+#~ msgstr ""
+

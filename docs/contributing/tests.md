@@ -4,7 +4,7 @@ We greatly appreciate pull requests that extend the automated tests that vet the
 
 ## How the Tests Work
 
-Travis executes `make build-test-all` against every pull request submitted to the `jupyter/docker-stacks` repository. The `make` command builds every docker image. After building each image, the `make` command executes `pytest` to run both image-specific tests like those in [base-notebook/test/](https://github.com/jupyter/docker-stacks/tree/master/base-notebook/test) and common tests defined in [test/](https://github.com/jupyter/docker-stacks/tree/master/test). Both kinds of tests make use of global [pytest fixtures](https://docs.pytest.org/en/latest/fixture.html) defined in the [conftest.py](https://github.com/jupyter/docker-stacks/blob/master/conftest.py) file at the root of the projects.
+Travis executes `make build-test-all` against pull requests submitted to the `jupyter/docker-stacks` repository. This `make` command builds every docker image. After building each image, the `make` command executes `pytest` to run both image-specific tests like those in [base-notebook/test/](https://github.com/jupyter/docker-stacks/tree/master/base-notebook/test) and common tests defined in [test/](https://github.com/jupyter/docker-stacks/tree/master/test). Both kinds of tests make use of global [pytest fixtures](https://docs.pytest.org/en/latest/fixture.html) defined in the [conftest.py](https://github.com/jupyter/docker-stacks/blob/master/conftest.py) file at the root of the projects.
 
 ## Contributing New Tests
 
@@ -14,7 +14,7 @@ Please follow the process below to add new tests:
 2. If your test should run against a single image, add your test code to one of the modules in `some-notebook/test/` or create a new module.
 3. Build one or more images you intend to test and run the tests locally. If you use `make`, call:
 ```
-make image/somestack-notebook
+make build/somestack-notebook
 make test/somestack-notebook
 ```
 4. [Submit a pull request](https://github.com/PointCloudLibrary/pcl/wiki/A-step-by-step-guide-on-preparing-and-submitting-a-pull-request) (PR) with your changes.

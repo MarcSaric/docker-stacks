@@ -33,27 +33,29 @@ RUN conda config --system --append channels r && \
     'gcc_linux-64' \
     'gxx_linux-64' \
     'gfortran_linux-64' \
-    'rpy2=2.9*' \
     'rstudio' \
-    'r-base=3.5.1' \
-    'r-irkernel=0.8*' \
+    'r-base=3.6.2' \
     'r-plyr=1.8*' \
-    'r-devtools=1.13*' \
-    'r-tidyverse=1.2*' \
-    'r-shiny=1.2*' \
-    'r-rmarkdown=1.11*' \
-    'r-forecast=8.2*' \
+    'r-devtools=2.2*' \
+    'r-rmarkdown=2.1*' \
+    'r-forecast=8.10*' \
     'r-rsqlite=2.1*' \
     'r-reshape2=1.4*' \
     'r-nycflights13=1.0*' \
     'r-caret=6.0*' \
-    'r-rcurl=1.95*' \
     'r-crayon=1.3*' \
+    'r-hexbin=1.28*' \
+    'r-htmltools=0.4*' \
+    'r-htmlwidgets=1.5*' \
+    'r-irkernel=1.1*' \
     'r-randomforest=4.6*' \
-    'r-htmltools=0.3*' \
     'r-sparklyr=0.9*' \
-    'r-htmlwidgets=1.2*' \
-    'r-hexbin=1.27*' && \
+    'r-rcurl=1.98*' \
+    'r-shiny=1.3*' \
+    'r-tidyverse=1.3*' \
+    'rpy2=3.1*' \
+    && \
+    conda clean --all -f -y && \
     fix-permissions $CONDA_DIR && \
     conda clean -tipsy && \
     fix-permissions /home/$NB_USER
