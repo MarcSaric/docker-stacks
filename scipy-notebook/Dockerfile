@@ -45,7 +45,6 @@ RUN conda install --quiet --yes \
     'protobuf=3.*' \
     'xlrd' \
     'ipyparallel=6.*' && \
-    conda remove --quiet --yes --force qt pyqt && \
     conda clean --all -f -y && \
     conda clean -tipsy && \
     # Activate ipywidgets extension in the environment that runs the notebook server
