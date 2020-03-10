@@ -33,7 +33,7 @@ RUN conda config --system --append channels r && \
     'gcc_linux-64' \
     'gxx_linux-64' \
     'gfortran_linux-64' \
-    'rstudio' \
+    #'rstudio' \
     'r-base=3.6.2' \
     'r-plyr=1.8*' \
     'r-devtools=2.2*' \
