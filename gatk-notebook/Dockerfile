@@ -24,14 +24,14 @@ USER $NB_USER
 # FIXME: Does not work so far. Incompatible packages
 RUN conda install --quiet --yes \
     -c bioconda \
-    'pysam=0.15.4' \
+    'pysam' \
     'pysamstats' \
-    'bwa=0.7.17' \
-    'picard=2.22.3' \
-    'gatk4=4.1.6.0' \
-    'seqkit=0.12.0' \
-    'biobambam=2.0.87' \
-    'samtools=1.10'
+    'bwa' \
+    'picard' \
+    'gatk4' \
+    'seqkit' \
+    'biobambam' \
+    'samtools'
  
 RUN conda clean -tipsy && \
     fix-permissions $CONDA_DIR
