@@ -6,27 +6,30 @@ LABEL maintainer="Marc Saric <marc.saric@gmx.de>"
 
 USER root
 
-# R pre-requisites # FIXME: Those are already in the minimal notebook?
+# R pre-requisites
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     fonts-dejavu \
-    tzdata \
     libmariadb-client-lgpl-dev \
     gfortran \
-    gcc && apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    gcc \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 USER $NB_USER
 
-# Add Biopython and other bioinformatics tools from Conda
+# Add tools from Bioconda
+# Versions are latest from bioconda as of today
 RUN conda install --quiet --yes \
     -c bioconda \
-    'pysam' \
-    'pysamstats' \
+    'pysam=0.15.4' \
+    'pysamstats=11.2' \
     'bwa=0.7.17' \
-    'picard=2.18.4' \
-    'gatk4=4.0.4.0' \
-    'seqkit=0.8.0'
+    'picard=2.22.3' \
+    'gatk4=4.1.6.0' \
+    'seqkit=0.12.0' \
+    'biobambam=2.0.87' \
+    'samtools=1.10'
  
 RUN conda clean -tipsy && \
     fix-permissions $CONDA_DIR
