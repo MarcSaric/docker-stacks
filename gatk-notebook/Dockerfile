@@ -20,10 +20,12 @@ USER $NB_USER
 
 # Add tools from Bioconda
 # Versions are latest from bioconda as of today
+# pysamstats can't be installed with version number
+# FIXME: Does not work so far. Incompatible packages
 RUN conda install --quiet --yes \
     -c bioconda \
     'pysam=0.15.4' \
-    'pysamstats=11.2' \
+    'pysamstats' \
     'bwa=0.7.17' \
     'picard=2.22.3' \
     'gatk4=4.1.6.0' \
