@@ -9,16 +9,13 @@ USER root
 
 # Pre-requisites
 RUN apt-get update && \
+    export DEBIAN_FRONTEND=noninteractive && \
     apt-get install -y --no-install-recommends \
     fonts-dejavu \
-    libncurses5-dev \
-    libbz2-dev \
-    liblzma-dev \
-    libncurses5-dev \
+    openjdk-11-jre-headless \
     unzip \
     vim \
-    zlib1g \
-    zlib1g-dev \
+    wget \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -26,22 +23,9 @@ RUN apt-get update && \
 # And try to fix https://github.com/r-lib/devtools/issues/1722
 RUN ln -s /bin/tar /bin/gtar && export TAR=/bin/tar
 
-# Install bwa and samtools using the commands from https://github.com/NCI-GDC/bwa_docker/commit/d7ccd79da3cf1106791a95278eaccd437a368fa8 
-RUN wget https://github.com/NCI-GDC/bwa/archive/gdc_a.tar.gz && \
-    tar xf gdc_a.tar.gz && \
-    cd bwa-gdc_a && \
-    make && \
-    mv bwa /usr/local/bin/ && \
-    cd ../ && \
-    rm -rf bwa* && \
-    wget https://github.com/samtools/samtools/releases/download/1.8/samtools-1.8.tar.bz2 && \
-    tar xf samtools-1.8.tar.bz2 && \
-    cd samtools-1.8 && \
-    ./configure --prefix=/usr/local && \
-    make && \
-    make install && \
-    cd ../ && \
-    rm -rf samtools-1.8 && \
+# Install picard using the commands from https://github.com/NCI-GDC/picard_docker/commit/446d97f3280016f60975cd95bef6af2739840091
+RUN wget https://github.com/broadinstitute/picard/releases/download/2.18.11/picard.jar && \
+    mv picard.jar /usr/local/bin/ && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:$PATH
