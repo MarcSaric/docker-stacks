@@ -17,6 +17,8 @@ RUN apt-get update && \
     fonts-dejavu \
     git \
     g++ \
+    libbz2-dev \
+    liblzma-dev \
     libncurses-dev \
     libopenblas-base \
     libopenblas-dev \
@@ -34,8 +36,10 @@ RUN ln -s /bin/tar /bin/gtar && export TAR=/bin/tar
 
 # Install Pindel using the commands from https://github.com/genome/pindel/commit/509ee862d6ce3b79e35857b1ed8fcb47186e447d
 RUN cd /usr/local/ && \
-    git clone --recursive https://github.com/samtools/htslib && \
-    cd /usr/local/htslib && \
+    wget https://github.com/samtools/htslib/releases/download/1.3.2/htslib-1.3.2.tar.bz2 && \
+    tar xf htslib-1.3.2.tar.bz2 && \
+    mv htslib-1.3.2 htslib && \
+    cd htslib && \
     make && \
     make install && \
     cd /usr/local/ && \
