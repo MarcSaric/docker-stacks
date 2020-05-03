@@ -41,9 +41,10 @@ RUN cd /usr/local/ && \
     mv htslib-1.3.2 htslib && \
     cd htslib && \
     make && \
-    make install && \
-    cd /usr/local/ && \
-    git clone --recursive https://github.com/genome/pindel.git && \
+    make install
+# And run pindel separate install, because this is fucking broken
+RUN cd /usr/local/ && \
+    git clone --recursive https://github.com/MarcSaric/pindel.git && \
     cd /usr/local/pindel/ && \
     ./INSTALL /usr/local/htslib && \
     ln -s /usr/local/pindel/pindel /usr/local/bin/pindel

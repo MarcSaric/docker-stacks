@@ -60,7 +60,7 @@ ENV PATH ${PATH}:/opt/ensembl-tools/scripts/variant_effect_predictor/
 # Set htslib path
 ENV PATH ${PATH}:/opt/ensembl-tools/scripts/variant_effect_predictor/htslib/
 
-# Add VEP plugins
+# Add VEP plugins copied from https://github.com/MarcSaric/vep-tool
 RUN mkdir -p /opt/vep-plugins/
 ADD vep-plugins /opt/vep-plugins/
     
