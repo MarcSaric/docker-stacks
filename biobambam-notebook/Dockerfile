@@ -18,6 +18,7 @@ RUN apt-get update && \
     libncurses5-dev \
     libtool \
     pkg-config \
+    libgomp1 \
     unzip \
     vim \
     zlib1g \
