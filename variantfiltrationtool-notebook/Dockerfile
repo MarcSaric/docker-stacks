@@ -45,9 +45,9 @@ RUN cd /tmp && \
     tar xvzf ./v1.0.3.tar.gz && \
     cd variant-filtration-tool-1.0.3/ && \
     pip install -r requirements.txt && \
-    python setup.py build && \
+    python setup.py install && \
     # Do this shit by hand then and skipt the test suite
-    cp -r ./build/lib/gdc_filtration_tools /opt/conda/lib/python3.7/site-packages && \
+    # cp -r ./build/lib/gdc_filtration_tools /opt/conda/lib/python3.7/site-packages && \
     cp ./bin/gdc_filtration_tools /usr/local/bin && \
     cd / && \
     rm -rf /tmp/* && \
