@@ -23,6 +23,24 @@ RUN apt-get update && \
 # And try to fix https://github.com/r-lib/devtools/issues/1722
 RUN ln -s /bin/tar /bin/gtar && export TAR=/bin/tar
 
+# The horror
+# Clone the forked GitHub repo containing the multi-mutect wrapper
+RUN cd /usr/local/ && \
+    # wget https://github.com/MarcSaric/mutect2-tool/archive/PBV11.tar.gz && \
+    # tar xvzf ./PBV11.tar.gz && \
+    wget https://github.com/MarcSaric/mutect2-tool/archive/master.zip && \
+    unzip ./master.zip && \
+    ls -a
+
+# Add it
+RUN cp /usr/local/mutect2-tool-master/docker/multi_mutect2/multi_mutect2_p3.py /usr/local/bin/ && \
+    chmod ugo+x /usr/local/bin/multi_mutect2_p3.py
+
+# Clean up
+RUN rm -rf /usr/local/mutect2-tool-master* \
+    /usr/local/master.zip #\
+    /usr/local/PBV11.tar.gz 
+
 # Install MuTECT from GATK 3.7 using the commands from https://github.com/NCI-GDC/mutect2-tool/commit/bd3492e8d2aba6c825de1c783bfe202e8f1a92f5
 ADD GenomeAnalysisTK.jar /usr/local/bin/
 
@@ -33,6 +51,5 @@ WORKDIR /home/$NB_USER
 USER $NB_UID
 
 # Finally fix the git access
-# FIXME: We would also need to copy or link the .ssh and .gpg keys
 RUN git config --global user.email "marc.saric@gmx.de"
 RUN git config --global user.name "Marc Saric"
