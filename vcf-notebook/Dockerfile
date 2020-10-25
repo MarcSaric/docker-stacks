@@ -19,7 +19,7 @@ RUN apt-get update && \
 USER $NB_UID
 
 # Add vcf tooling and other bioinformatics tools from source 
-RUN pip install biopython PyVCF vcfpy pysam ensembl_rest apybiomart scibiomart scidat xmltodict
+RUN pip install biopython PyVCF vcfpy pysam ensembl_rest
 
 # Somethign is wrong with the permissions in the lower layers
 USER root
