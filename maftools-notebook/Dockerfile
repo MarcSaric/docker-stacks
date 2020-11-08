@@ -16,4 +16,4 @@ USER $NB_USER
 
 # Add maftools manually
 # https://www.bioconductor.org/packages/release/bioc/html/maftools.html
-RUN R -e 'if (!require("BiocManager"));install.packages("BiocManager");BiocManager::install("maftools")'
+RUN R -e 'if (!require("BiocManager")) install.packages("BiocManager");BiocManager::install("maftools")'
