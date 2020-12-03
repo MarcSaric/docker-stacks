@@ -17,6 +17,9 @@ RUN apt-get update && \
     fonts-dejavu \
     openjdk-8-jre-headless \
     gfortran \
+    libmariadbclient-dev \
+    libmariadb-client-lgpl-dev \
+    libssl-dev \
     gcc \
     unzip && \
     rm -rf /var/lib/apt/lists/*
@@ -31,3 +34,5 @@ RUN R -e 'install.packages("https://cran.r-project.org/src/contrib/Archive/forei
 
 # Installing deps
 RUN R -e 'BiocManager::install("trackViewer", version="3.10")'
+RUN R -e 'BiocManager::install("RMariaDB")'
+RUN R -e 'BiocManager::install("org.Hs.eg.db")'
