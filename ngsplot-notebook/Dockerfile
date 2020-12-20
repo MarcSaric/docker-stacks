@@ -28,7 +28,7 @@ RUN apt-get update && \
 USER $NB_UID
 
 # Add required packages from CRAN
-# foreign is R 4 only, for older versions see a sollution from https://stackoverflow.com/questions/61922375/foreign-package-in-r
+# foreign is R 4 only, for older versions see a solution from https://stackoverflow.com/questions/61922375/foreign-package-in-r
 RUN R -e 'install.packages("https://cran.r-project.org/src/contrib/Archive/foreign/foreign_0.8-76.tar.gz")'
  
 
@@ -36,3 +36,7 @@ RUN R -e 'install.packages("https://cran.r-project.org/src/contrib/Archive/forei
 RUN R -e 'BiocManager::install("trackViewer", version="3.10")'
 RUN R -e 'BiocManager::install("RMariaDB")'
 RUN R -e 'BiocManager::install("org.Hs.eg.db")'
+RUN R -e 'BiocManager::install("ggbio")'
+
+# Install collections
+RUN R -e 'install.packages(c("collections", "rlist"), repo = "https://cloud.r-project.org")'
