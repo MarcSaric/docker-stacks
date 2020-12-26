@@ -13,7 +13,9 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 USER $NB_USER
+# Install collections
+RUN R -e 'install.packages(c("mclust"), repo = "https://cloud.r-project.org")'
 
 # Add maftools manually
 # https://www.bioconductor.org/packages/release/bioc/html/maftools.html
-RUN R -e 'if (!require("BiocManager")) install.packages("BiocManager");BiocManager::install("maftools")'
+RUN R -e 'if (!require("BiocManager")) install.packages("BiocManager");BiocManager::install(c("maftools"))'
