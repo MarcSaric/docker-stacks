@@ -16,6 +16,6 @@ USER $NB_USER
 # Install collections
 RUN R -e 'install.packages(c("mclust"), repo = "https://cloud.r-project.org")'
 
-# Add maftools manually
+# Add maftools manually from GitHub to get the latest version.
 # https://www.bioconductor.org/packages/release/bioc/html/maftools.html
 RUN R -e 'if (!require("BiocManager")) install.packages("BiocManager");BiocManager::install(c("maftools"))'
