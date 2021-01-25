@@ -18,8 +18,4 @@ RUN R -e 'install.packages(c("mclust"), repo = "https://cloud.r-project.org")'
 
 # Add maftools manually from GitHub to get the latest version.
 # https://www.bioconductor.org/packages/release/bioc/html/maftools.html
-RUN R -e 'if (!require("BiocManager")) install.packages("BiocManager");BiocManager::install(pkgs = c("maftools"))'
-
-RUN echo "Hi"
-# Try to overwrite it
-RUN R -e 'library(devtools);install_github("MarcSaric/maftools")'
+RUN R -e 'if (!require("BiocManager")) install.packages("BiocManager");BiocManager::install(c("maftools"))'
