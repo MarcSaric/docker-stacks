@@ -37,6 +37,7 @@ RUN R -e 'BiocManager::install("trackViewer", version="3.10")'
 RUN R -e 'BiocManager::install("RMariaDB")'
 RUN R -e 'BiocManager::install("org.Hs.eg.db")'
 RUN R -e 'BiocManager::install("ggbio")'
+RUN R -e 'BiocManager::install("GenVisR")'
 
 # Install collections
 RUN R -e 'install.packages(c("collections", "rlist"), repo = "https://cloud.r-project.org")'
